@@ -1,1 +1,0 @@
-export const styleUrl = new URL("../index.css", import.meta.url);

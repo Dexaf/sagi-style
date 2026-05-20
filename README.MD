@@ -29,6 +29,26 @@ without permission.
   method throwing the error with \n after to make a cleaner visualization of the
   message.
 
+# Usage
+
+To use the assets and web component who reference the assets correctly add this
+to your vite config:
+
+```ts
+function copyAssetsPlugin() {
+	return {
+		name: "copy-assets-plugin",
+		apply: "build",
+		buildStart() {
+			const src = path.resolve("node_modules/@dexaf/dist/sagi-style/assets");
+			const dest = path.resolve("public/sagi-style/assets");
+			fs.cpSync(src, dest, { recursive: true });
+		},
+	};
+}
+```
+or copy the sagi-style folder in your public assets at the root of the folder
+
 # Web components
 
 ## File upload

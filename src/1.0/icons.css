@@ -17,36 +17,36 @@
 .icon.size-5 { width: 5rem; height: 5rem; }
 
 .icon.list {
-  mask-image: url('/assets/icon/list.svg');
-  -webkit-mask-image: url('/assets/icon/list.svg');
+  mask-image: url('/sagi-style/assets/icons/list.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/list.svg');
 }
 
 .icon.arrow-right {
-  mask-image: url('/assets/icon/arrow-right.svg');
-  -webkit-mask-image: url('/assets/icon/arrow-right.svg');
+  mask-image: url('/sagi-style/assets/icons/arrow-right.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/arrow-right.svg');
 }
 
 .icon.arrow-left {
-  mask-image: url('/assets/icon/arrow-left.svg');
-  -webkit-mask-image: url('/assets/icon/arrow-left.svg');
+  mask-image: url('/sagi-style/assets/icons/arrow-left.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/arrow-left.svg');
 }
 
 .icon.menu {
-  mask-image: url('/assets/icon/menu.svg');
-  -webkit-mask-image: url('/assets/icon/menu.svg');
+  mask-image: url('/sagi-style/assets/icons/menu.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/menu.svg');
 }
 
 .icon.close {
-  mask-image: url('/assets/icon/close.svg');
-  -webkit-mask-image: url('/assets/icon/close.svg');
+  mask-image: url('/sagi-style/assets/icons/close.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/close.svg');
 }
 
 .icon.file-upload {
-  mask-image: url('/assets/icon/file-upload.svg');
-  -webkit-mask-image: url('/assets/icon/file-upload.svg');
+  mask-image: url('/sagi-style/assets/icons/file-upload.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/file-upload.svg');
 }
 
 .icon.file-written {
-  mask-image: url('/assets/icon/file-written.svg');
-  -webkit-mask-image: url('/assets/icon/file-written.svg');
+  mask-image: url('/sagi-style/assets/icons/file-written.svg');
+  -webkit-mask-image: url('/sagi-style/assets/icons/file-written.svg');
 }

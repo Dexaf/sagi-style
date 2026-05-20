@@ -1,12 +1,15 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import  { resolve } from 'path'
 
 export default defineConfig({
     build: {
         lib: {
             entry: resolve(import.meta.dirname, 'src/1.0/index.ts'),
-            name: 'sagi-style',
+            name: 'index',
             formats: ['es'],
         },
+        assetsDir: 'assets',
+        cssCodeSplit: true,
     },
+    base: './'
 })

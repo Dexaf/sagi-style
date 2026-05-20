@@ -1,5 +1,5 @@
 import { SagiHTMLElement } from "../classes/web-component.class";
-import { styleUrl } from "./index-css-ref";
+import indexCss from "../index.css?inline";
 
 export class ToastWebComponent extends SagiHTMLElement {
     // SECTION - PROPS
@@ -28,6 +28,9 @@ export class ToastWebComponent extends SagiHTMLElement {
             .content
             .cloneNode(true) as DocumentFragment;
         const shadowRoot = this.attachShadow({ mode: "open" });
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
         //append to dom
         shadowRoot.appendChild(templateContentRef);
     }
@@ -80,7 +83,6 @@ export class ToastWebComponent extends SagiHTMLElement {
 
         t.innerHTML = //html 
             `
-		    <link rel="stylesheet" href="${styleUrl}">
             <div class="toast">
                 <div class="row just-e">
                     <button class="toast-close-button">

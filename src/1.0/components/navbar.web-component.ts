@@ -1,5 +1,5 @@
 import { SagiHTMLElement } from "../classes/web-component.class";
-import { styleUrl } from "./index-css-ref";
+import indexCss from "../index.css?inline";
 
 /**
  * This component is a navbar with a dropdown menu, 
@@ -26,6 +26,9 @@ export class NavbarWebComponent extends SagiHTMLElement {
             .cloneNode(true) as DocumentFragment;
 
         const shadowRoot = this.attachShadow({ mode: 'open' });
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
         //append to dom
         shadowRoot.appendChild(templateContentHtml);
     }
@@ -54,11 +57,10 @@ export class NavbarWebComponent extends SagiHTMLElement {
 
         t.innerHTML = //html
             `
-            <link rel="stylesheet" href="${styleUrl}">
             <header class="bg-dark t-light row just-sb">
                 <a id="logo-link" href="/">
-                    <img src="/assets/images/logo/logo-small.png" class="logo layer blue" />
-                    <img src="/assets/images/logo/logo-small.png" class="logo layer green" />
+                    <img src="/sagi-style/assets/images/logo/logo-small.png" class="logo layer blue" />
+                    <img src="/sagi-style/assets/images/logo/logo-small.png" class="logo layer green" />
                 </a>
                 <button id="menu-btn">
                     <div class="icon menu size-25 m-auto"></div>

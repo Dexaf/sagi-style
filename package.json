@@ -5,7 +5,7 @@
 		"url": "git+https://github.com/Dexaf/sagi-style"
 	},
 	"license": "UNLICENSED",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"type": "module",
 	"author": "Federico Pisa - Sagitauros",
 	"description": "system design for sagitauros studio's inside applications",
@@ -16,7 +16,7 @@
 		".": {
 			"import": "./dist/sagi-style.js"
 		},
-		"./sagi-style.css": "./dist/sagi-style.css",
+		"./index.css": "./dist/index.css",
 		"./assets/*": "./dist/assets/*"
 	},
 	"scripts": {

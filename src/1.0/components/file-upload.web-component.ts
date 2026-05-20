@@ -1,5 +1,5 @@
 import { SagiHTMLElement } from "../classes/web-component.class.ts";
-import { styleUrl } from "./index-css-ref.ts";
+import indexCss from "../index.css?inline";
 
 /** const of state of the file upload input */
 const FILE_UPLOAD_STATE = {
@@ -90,6 +90,9 @@ export class FileUploadWebComponent extends SagiHTMLElement {
             .cloneNode(true) as DocumentFragment;
 
         const shadowRoot = this.attachShadow({ mode: "open" });
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
         //append to dom
         shadowRoot.appendChild(templateContentRef);
     }
@@ -152,7 +155,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
             acceptAttributeHtml = `accept="${accept}"`;
         t.innerHTML = //html 
             `
-            <link rel="stylesheet" href="${styleUrl}">
             <label class="label-for-file-upload column no-wrap rg-05 just-se align-i-c" for="${id}-input">
                 <span class="upload-file-label-wrapper">
                     <slot name="upload-file-label"></slot>

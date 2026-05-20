@@ -1,5 +1,5 @@
 import { SagiHTMLElement } from "../classes/web-component.class";
-import { styleUrl } from "./index-css-ref";
+import indexCss from "../index.css?inline";
 
 /**
  * This component is a modal with a shadow curtain behind, 
@@ -41,6 +41,10 @@ export class ModalWebComponent extends SagiHTMLElement {
             .cloneNode(true) as DocumentFragment;
 
         const shadowRoot = this.attachShadow({ mode: "open" })
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
+        //append to dom
         shadowRoot.appendChild(templateContentHtml);
     }
 
@@ -65,8 +69,7 @@ export class ModalWebComponent extends SagiHTMLElement {
     protected getTemplate(id: string): HTMLTemplateElement {
         const t = document.createElement('template');
         t.innerHTML = //html
-        `
-            <link rel="stylesheet" href="${styleUrl}">
+            `
             <div id="${id}" class="modal hidden">
                 <div class="modal-body container-60 bg-light">
                     <div class="modal-header px-2 py-1 row just-sb">
@@ -93,7 +96,7 @@ export class ModalWebComponent extends SagiHTMLElement {
     public openModal = () => {
         const modalRef = this.shadowRoot?.querySelector('.modal') as HTMLDivElement;
         modalRef.classList.remove('hidden');
-        
+
         document.body.style.overflow = 'hidden';
 
         //SEND EVENT THAT MODAL WAS OPENED
