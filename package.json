@@ -5,13 +5,20 @@
 		"url": "git+https://github.com/Dexaf/sagi-style"
 	},
 	"license": "UNLICENSED",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"type": "module",
 	"author": "Federico Pisa - Sagitauros",
 	"description": "system design for sagitauros studio's inside applications",
 	"files": [
 		"dist"
 	],
+	"exports": {
+		".": {
+			"import": "./dist/sagi-style.js"
+		},
+		"./sagi-style.css": "./dist/sagi-style.css",
+		"./assets/*": "./dist/assets/*"
+	},
 	"scripts": {
 		"dev": "vite --host",
 		"build-lib-test": "vite build --config vite.config.lib.ts",

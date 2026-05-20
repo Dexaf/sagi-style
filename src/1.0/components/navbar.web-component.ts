@@ -57,8 +57,8 @@ export class NavbarWebComponent extends SagiHTMLElement {
             <link rel="stylesheet" href="${styleUrl}">
             <header class="bg-dark t-light row just-sb">
                 <a id="logo-link" href="/">
-                    <img src="/images/logo/logo-small.png" class="logo layer blue" />
-                    <img src="/images/logo/logo-small.png" class="logo layer green" />
+                    <img src="/assets/images/logo/logo-small.png" class="logo layer blue" />
+                    <img src="/assets/images/logo/logo-small.png" class="logo layer green" />
                 </a>
                 <button id="menu-btn">
                     <div class="icon menu size-25 m-auto"></div>
