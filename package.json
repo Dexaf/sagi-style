@@ -11,6 +11,7 @@
 	"description": "system design for sagitauros studio's inside applications",
 	"scripts": {
 		"dev": "vite --host",
+		"build-lib-test": "vite build --config vite.config.lib.ts",
 		"build-demo": "tsc && vite build --config vite.config.demo.ts",
 		"preview": "vite preview",
 		"publishPackage": "vite build --config vite.config.lib.ts & npm publish --access=public"
