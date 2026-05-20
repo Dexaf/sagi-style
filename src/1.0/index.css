@@ -1,0 +1,20 @@
+/* BASE */
+@import "./vars.css";
+@import "./reset.css";
+@import "./animations.css";
+
+/* STYLING */
+@import "./satoshi.css";
+@import "./font.css";
+@import "./generics.css";
+@import "./layout.css";
+@import "./spacing.css";
+@import "./icons.css";
+@import "./responsive-font.css";
+@import "./form.css";
+
+/* WEB COMPONENTS */
+@import "./navbar.css";
+@import "./modal.css";
+@import "./file-input.css";
+@import "./toast.css";

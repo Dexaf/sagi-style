@@ -1,0 +1,13 @@
+.toast {
+    min-width: 20vw;
+}
+
+.toast .countdown-bar-wrapper {
+    height: 3px;
+    transform: rotateZ(180deg);
+}
+
+.toast .countdown-bar {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+}

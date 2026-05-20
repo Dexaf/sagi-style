@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sagi Style</title>
+		<link rel="stylesheet" href="./src/1.0/index.css">
+	</head>
+	<!-- NOTE - ref to the latest style -->
+	<body class="fh-100 py-3">
+		<div class="container-85 m-auto column rg-2">
+			<div>
+				<h1>SagiStyle 1.0</h1>
+				<p>
+					this page shows the css classes and effect usable inside a web project
+					where SagiStyle is imported.
+				</p>
+				<hr />
+			</div>
+			<!-- LAYOUT -->
+			<div id="layout" class="column rg-2">
+				<h2>Layout</h2>
+				<!-- DISPLAY -->
+				<div id="display" class="column rg-1">
+					<h3>Display</h3>
+					<div class="column rg-05">
+						<p class="show-till-tab bg-dark t-light">
+							show-till-tab - visibile fino a 1200px
+						</p>
+						<p class="show-tab bg-light">
+							show-tab - <i>visibile solo sotto 1200px</i>
+						</p>
+						<p class="show-till-mob bg-blue t-light">
+							show-till-mob - visibile fino a 700px
+						</p>
+						<p class="show-mob bg-green t-dark">
+							show-mob - <i>visibile solo sotto 700px</i>
+						</p>
+					</div>
+				</div>
+				<!-- FLEX -->
+				<div id="flex" class="column rg-1">
+					<h3>Flex</h3>
+
+					<div class="column rg-05">
+						<p>row</p>
+						<div class="row g-1 bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>column</p>
+						<div class="column g-1 bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>no-wrap - flex-wrap: nowrap</p>
+						<div class="row no-wrap g-1 bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+							<div class="bg-dark t-light p-05">D</div>
+							<div class="bg-dark t-light p-05">E</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-sb - justify-content: space-between</p>
+						<div class="row just-sb bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-se - justify-content: space-evenly</p>
+						<div class="row just-se bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-sa - justify-content: space-around</p>
+						<div class="row just-sa bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-s - justify-content: start</p>
+						<div class="row just-s bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-c - justify-content: center</p>
+						<div class="row just-c bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>just-e - justify-content: end</p>
+						<div class="row just-e bg-blue">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>align-i-s - align-items: start</p>
+						<div class="row g-1 align-i-s bg-blue" style="height: 80px">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>align-i-c - align-items: center</p>
+						<div class="row g-1 align-i-c bg-blue" style="height: 80px">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+
+						<hr class="w-100" />
+
+						<p>align-i-e - align-items: end</p>
+						<div class="row g-1 align-i-e bg-blue" style="height: 80px">
+							<div class="bg-dark t-light p-05">A</div>
+							<div class="bg-dark t-light p-05">B</div>
+							<div class="bg-dark t-light p-05">C</div>
+						</div>
+					</div>
+				</div>
+				<!-- GAP -->
+				<div id="gap" class="column rg-1">
+					<h3>Gap</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-05">
+						<p>g-05</p>
+						<div class="row g-05 bg-blue">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+
+						<p>g-1</p>
+						<div class="row g-1 bg-blue">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+
+						<p>g-2</p>
+						<div class="row g-2 bg-blue">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+
+						<p>g-4</p>
+						<div class="row g-4 bg-blue">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+					</div>
+				</div>
+				<!-- ROW GAP -->
+				<div id="row-gap" class="column rg-1">
+					<h3>Row gap</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-05">
+						<p>rg-05</p>
+						<div class="column rg-05 bg-green">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>rg-1</p>
+						<div class="column rg-1 bg-green">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>rg-2</p>
+						<div class="column rg-2 bg-green">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>rg-4</p>
+						<div class="column rg-4 bg-green">
+							<div class="bg-dark t-light p-05">1</div>
+							<div class="bg-dark t-light p-05">2</div>
+							<div class="bg-dark t-light p-05">3</div>
+						</div>
+					</div>
+				</div>
+				<!-- COLUMN GAP -->
+				<div id="col-gap" class="column rg-1">
+					<h3>Column gap</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-05">
+						<p>cg-05</p>
+						<div class="row cg-05 bg-dark">
+							<div class="bg-blue p-05">1</div>
+							<div class="bg-blue p-05">2</div>
+							<div class="bg-blue p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>cg-1</p>
+						<div class="row cg-1 bg-dark">
+							<div class="bg-blue p-05">1</div>
+							<div class="bg-blue p-05">2</div>
+							<div class="bg-blue p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>cg-2</p>
+						<div class="row cg-2 bg-dark">
+							<div class="bg-blue p-05">1</div>
+							<div class="bg-blue p-05">2</div>
+							<div class="bg-blue p-05">3</div>
+						</div>
+						<hr class="w-100" />
+						<p>cg-4</p>
+						<div class="row cg-4 bg-dark">
+							<div class="bg-blue p-05">1</div>
+							<div class="bg-blue p-05">2</div>
+							<div class="bg-blue p-05">3</div>
+						</div>
+					</div>
+				</div>
+				<!-- CONTAINERS -->
+				<div id="containers" class="column rg-1">
+					<h3>Containers</h3>
+
+					<div class="column rg-05 align-i-c">
+						<div class="container-60 bg-blue">
+							<p class="bg-dark t-light p-05">
+								container-60 - <i>60% / 80% / 95%</i>
+							</p>
+						</div>
+
+						<div class="container-75 bg-green">
+							<p class="bg-dark t-light p-05">
+								container-75 - <i>75% / 85% / 95%</i>
+							</p>
+						</div>
+
+						<div class="container-85 bg-dark">
+							<p class="t-light p-05">container-85 - <i>85% / 95%</i></p>
+						</div>
+					</div>
+				</div>
+				<!-- PADDING -->
+				<div id="padding" class="column rg-1">
+					<h3>Padding</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-1">
+						<p>p-1</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark p-1">
+								<div class="bg-light">inner box</div>
+							</div>
+						</div>
+						<p>p-2</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark p-2">
+								<div class="bg-light">inner box</div>
+							</div>
+						</div>
+						<p>p-3</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark p-3">
+								<div class="bg-light">inner box</div>
+							</div>
+						</div>
+						<p>p-4</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark p-4">
+								<div class="bg-light">inner box</div>
+							</div>
+						</div>
+						<p>p-5</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark p-5">
+								<div class="bg-light">inner box</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- MARGIN -->
+				<div id="margin" class="column rg-1">
+					<h3>Margin</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-1">
+						<p>m-1</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark">
+								<div class="bg-light m-1">inner box</div>
+							</div>
+						</div>
+						<p>m-2</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark">
+								<div class="bg-light m-2">inner box</div>
+							</div>
+						</div>
+						<p>m-3</p>
+						<div class="bg-blue p-1">
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-light m-3">inner box</div>
+								</div>
+							</div>
+						</div>
+						<p>m-4</p>
+						<div class="bg-blue p-1">
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-light m-4">inner box</div>
+								</div>
+							</div>
+						</div>
+						<p>m-5</p>
+						<div class="bg-blue p-1">
+							<div class="bg-dark">
+								<div class="bg-light m-5">inner box</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- AXIS -->
+				<div id="axis" class="column rg-1">
+					<h3>Axis</h3>
+					<i> Every combination is usable from 0 to 5 in 0.5 steps </i>
+					<div class="column rg-1">
+						<div class="column rg-1">
+							<p>px-2 py-1</p>
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-green px-2 py-1">inner box</div>
+								</div>
+							</div>
+							<p>pl-2 pr-4</p>
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-green pl-2 pr-4">inner box</div>
+								</div>
+							</div>
+							<p>pt-2 pb-1</p>
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-green pt-2 pb-1">inner box</div>
+								</div>
+							</div>
+							<p>mx-2 my-2</p>
+							<div class="bg-blue p-1">
+								<div class="bg-dark">
+									<div class="bg-green mx-2 my-2">inner box</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TYPOGRAPHY -->
+			<div id="typography" class="column rg-2">
+				<h2>Typography</h2>
+				<!-- HEADINGS -->
+				<div id="headings" class="column rg-1">
+					<h3>Headings</h3>
+
+					<div class="column rg-05">
+						<h1>h1 - 3rem</h1>
+						<h2>h2 - 2.25rem</h2>
+						<h3>h3 - 1.75rem</h3>
+						<h4>h4 - 1.5rem</h4>
+						<h5>h5 - 1.25rem</h5>
+						<h6>h6 - 1rem</h6>
+					</div>
+				</div>
+				<!-- SMALL + UTILITIES -->
+				<div id="text-utilities" class="column rg-1">
+					<h3>Text utilities</h3>
+
+					<div class="column rg-05">
+						<small>small - 0.875rem</small>
+
+						<p class="text-sm">text-sm - smaller than base scale</p>
+
+						<p class="text-lg">text-lg - larger than base scale</p>
+					</div>
+				</div>
+				<!-- RESPONSIVE NOTE -->
+				<div id="typography-responsive" class="column rg-1">
+					<h3>Responsive behavior</h3>
+
+					<div class="column rg-05">
+						<p>root font-size uses clamp() with breakpoints</p>
+
+						<p>
+							@media 1200px -
+							<i>tablet scale: reduced min/max and adjusted fluid factor</i>
+						</p>
+
+						<p>
+							@media 700px -
+							<i>mobile scale: further reduced base range for compact layout</i>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- FONT WEIGHT -->
+			<div id="font-weight" class="column rg-1">
+				<h2>Font weight</h2>
+				<div class="column rg-05">
+					<p class="fw-300">
+						fw-300 - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-400">
+						fw-400 - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-500">
+						fw-500 - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-700">
+						fw-700 - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-900">
+						fw-900 - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-300-i">
+						fw-300-i - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-400-i">
+						fw-400-i - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-500-i">
+						fw-500-i - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-700-i">
+						fw-700-i - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="fw-900-i">
+						fw-900-i - the quick brown fox jumps over the lazy dog
+					</p>
+				</div>
+			</div>
+			<!-- TEXT TRANSFORM -->
+			<div id="text-transform" class="column rg-1">
+				<h2>Text transform</h2>
+				<div class="column rg-05">
+					<p class="t-uppercase">
+						t-uppercase - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="t-capitalize">
+						t-capitalize - the quick brown fox jumps over the lazy dog
+					</p>
+					<p class="t-lowercase">
+						T-LOWERCASE - THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+					</p>
+				</div>
+			</div>
+			<!-- TEXT COLOR -->
+			<div id="text-color" class="column rg-1">
+				<h2>Text color</h2>
+				<div class="column rg-05">
+					<p class="t-light bg-dark">t-light - sample text</p>
+					<p class="t-dark bg-light">t-dark - sample text</p>
+					<p class="t-blue">t-blue - sample text</p>
+					<p class="t-green">t-green - sample text</p>
+				</div>
+			</div>
+			<!-- BACKGROUND -->
+			<div id="background-color" class="column rg-1">
+				<h2>Background color</h2>
+				<div class="row g-2 wrap">
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-light size-3 bord-col-dark"></div>
+						<small>bg-light</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-dark size-3"></div>
+						<small>bg-dark</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-blue size-3"></div>
+						<small>bg-blue</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-green size-3"></div>
+						<small>bg-green</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-red size-3"></div>
+						<small>bg-red</small>
+					</div>
+				</div>
+			</div>
+			<!-- BORDER COLOR -->
+			<div id="border-color" class="column rg-1">
+				<h2>Border color</h2>
+				<div class="row g-2 wrap">
+					<div class="column rg-05 align-i-c bg-dark p-05">
+						<div class="box size-3 bord-col-light"></div>
+						<small class="t-light">bord-col-light</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box size-3 bord-col-dark bg-light"></div>
+						<small>bord-col-dark</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box size-3 bord-col-blue bg-light"></div>
+						<small>bord-col-blue</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box size-3 bord-col-green bg-light"></div>
+						<small>bord-col-green</small>
+					</div>
+
+					<div class="column rg-05 align-i-c">
+						<div class="box size-3 bord-col-red bg-light"></div>
+						<small>bord-col-red</small>
+					</div>
+				</div>
+			</div>
+			<!-- SHADOWS -->
+			<div id="shadows" class="column rg-1">
+				<h2>Shadows</h2>
+				<div class="row g-2 wrap">
+					<div class="column rg-05 align-i-c bg-dark p-05">
+						<div class="box bg-light size-3 shadow-light bg-green"></div>
+						<small class="t-light">shadow-light</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-light size-3 shadow-dark bord-col-dark"></div>
+						<small>shadow-dark</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-light size-3 shadow-blue bord-col-dark"></div>
+						<small>shadow-blue</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-light size-3 shadow-green bord-col-dark"></div>
+						<small>shadow-green</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-light size-3 shadow-red bord-col-dark"></div>
+						<small>shadow-red</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div
+							class="box bg-light size-3 shadow-light dbl-shadow bord-col-dark"
+						></div>
+						<small>shadow-light dbl</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div
+							class="box bg-light size-3 shadow-dark dbl-shadow bord-col-dark"
+						></div>
+						<small>shadow-dark dbl</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div
+							class="box bg-light size-3 shadow-blue dbl-shadow bord-col-dark"
+						></div>
+						<small>shadow-blue dbl</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div
+							class="box bg-light size-3 shadow-green dbl-shadow bord-col-dark"
+						></div>
+						<small>shadow-green dbl</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div
+							class="box bg-light size-3 shadow-red dbl-shadow bord-col-dark"
+						></div>
+						<small>shadow-red dbl</small>
+					</div>
+				</div>
+			</div>
+			<!-- ICONS -->
+			<div id="icons" class="column rg-1">
+				<h2>Icons</h2>
+				<i> This list is non exhaustive and more icons will be added </i>
+				<div class="row g-2 wrap">
+					<div class="column rg-05 align-i-c">
+						<div class="icon close bg-dark size-2"></div>
+						<small>close</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="icon menu bg-dark size-2"></div>
+						<small>menu</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="icon arrow-left bg-dark size-2"></div>
+						<small>arrow-left</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="icon arrow-right bg-dark size-2"></div>
+						<small>arrow-right</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="icon file-upload bg-dark size-2"></div>
+						<small>file-upload</small>
+					</div>
+				</div>
+				<!-- ICON SIZE -->
+				<div id="icon-size" class="column rg-1">
+					<h3>Sizes</h3>
+
+					<div class="row g-2 wrap align-i-e">
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-05"></div>
+							<small>size-05</small>
+						</div>
+
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-1"></div>
+							<small>size-1</small>
+						</div>
+
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-15"></div>
+							<small>size-15</small>
+						</div>
+
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-2"></div>
+							<small>size-2</small>
+						</div>
+
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-3"></div>
+							<small>size-3</small>
+						</div>
+
+						<div class="column rg-05 align-i-c">
+							<div class="icon close bg-dark size-4"></div>
+							<small>size-4</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ROUNDED -->
+			<div id="rounded" class="column rg-1">
+				<h2>Rounded</h2>
+				<div class="row g-2 wrap">
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-dark size-3 rounded-05"></div>
+						<small>rounded-05</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-dark size-3 rounded-1"></div>
+						<small>rounded-1</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-dark size-3 rounded-15"></div>
+						<small>rounded-15</small>
+					</div>
+					<div class="column rg-05 align-i-c">
+						<div class="box bg-dark size-3 rounded-2"></div>
+						<small>rounded-2</small>
+					</div>
+				</div>
+			</div>
+			<!-- BUTTONS -->
+			<div id="buttons" class="column rg-1">
+				<h2>Buttons</h2>
+				<!-- STANDARDS -->
+				<div>
+					<h3 class="mb-05">Standard</h3>
+					<div class="w-100 row g-1">
+						<button>normal button</button>
+						<a href="#" class="button"> link button </a>
+						<button disabled>disabled button</button>
+						<button class="rounded-05">rounded button</button>
+						<button class="loading" disabled>loading button</button>
+						<button>
+							<div class="icon close clear-file"></div>
+						</button>
+					</div>
+				</div>
+				<!-- LIGHT BUTTONS -->
+				<div>
+					<h3 class="mb-05">Light</h3>
+					<div class="w-100 row g-1">
+						<button class="light">normal button</button>
+						<a href="#" class="button light"> link button </a>
+						<button class="light" disabled>disabled button</button>
+						<button class="light rounded-05">rounded button</button>
+						<button class="light loading" disabled>loading button</button>
+						<button class="light">
+							<div class="icon close clear-file"></div>
+						</button>
+					</div>
+				</div>
+
+				<!-- BLUE BUTTONS -->
+				<div>
+					<h3 class="mb-05">Blue</h3>
+					<div class="w-100 row g-1">
+						<button class="blue">normal button</button>
+						<a href="#" class="button blue"> link button </a>
+						<button class="blue" disabled>disabled button</button>
+						<button class="blue rounded-05">rounded button</button>
+						<button class="blue loading" disabled>loading button</button>
+						<button class="blue">
+							<div class="icon close clear-file"></div>
+						</button>
+					</div>
+				</div>
+
+				<!-- GREEN BUTTONS -->
+				<div>
+					<h3 class="mb-05">Green</h3>
+					<div class="w-100 row g-1">
+						<button class="green">normal button</button>
+						<a href="#" class="button green"> link button </a>
+						<button class="green" disabled>disabled button</button>
+						<button class="green rounded-05">rounded button</button>
+						<button class="green loading" disabled>loading button</button>
+						<button class="green">
+							<div class="icon close clear-file"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- INPUT -->
+			<div id="inputs" class="column rg-1">
+				<h2>Inputs</h2>
+				<!-- TEXT INPUT -->
+				<div id="text-input">
+					<h3 class="mb-05">Text input</h3>
+					<div class="row g-1">
+						<input
+							id="input-standard"
+							type="text"
+							required
+							placeholder="normal input"
+						/>
+						<input
+							id="input-disabled"
+							type="text"
+							disabled
+							placeholder="disabled"
+						/>
+						<input
+							id="input-readonly"
+							type="text"
+							readonly
+							placeholder="readonly"
+						/>
+						<input
+							id="input-required-touched"
+							type="text"
+							class="touched"
+							required
+							minlength="10"
+							placeholder="invalid input"
+						/>
+						<input
+							id="input-touched-valid"
+							type="text"
+							class="touched"
+							valid
+							placeholder="valid input"
+						/>
+						<input
+							id="input-loading"
+							type="text"
+							class="loading"
+							disabled
+							placeholder="loading input"
+						/>
+					</div>
+				</div>
+				<!-- NUMBER INPUT -->
+				<div id="number-input">
+					<h3 class="mb-05">Number input</h3>
+					<div class="row g-1">
+						<input type="number" />
+					</div>
+				</div>
+				<!-- CHECK AND RADIO INPUT -->
+				<div id="check-radio-input" class="column rg-1">
+					<h3>Check and Radio input</h3>
+					<!-- CHECKBOX -->
+					<div id="radio-inputs">
+						<h4 class="mb-05">Checkbox</h4>
+						<div class="row g-1">
+							<label class="label-for-pointbox" for="italian-cb">
+								<input
+									type="checkbox"
+									id="italian-cb"
+									name="italian"
+									value="italian"
+								/>
+								Italiano
+							</label>
+							<label class="label-for-pointbox" for="english-cb">
+								<input
+									type="checkbox"
+									id="english-cb"
+									name="english"
+									value="english"
+									checked
+								/>
+								English
+							</label>
+							<label class="label-for-pointbox" for="japanese-cb">
+								<input
+									type="checkbox"
+									id="japanese-cb"
+									name="japanese"
+									value="japanese"
+									checked
+								/>
+								日本語
+							</label>
+							<label class="label-for-pointbox" for="disabled-cb">
+								<input
+									type="checkbox"
+									id="disabled-cb"
+									name="disabled"
+									value="disabled"
+									disabled
+								/>
+								disabled
+							</label>
+							<label class="label-for-pointbox" for="loading-cb">
+								<input
+									type="checkbox"
+									id="loading-cb"
+									name="loading"
+									value="loading"
+									class="loading"
+									checked
+									disabled
+								/>
+								loading
+							</label>
+							<label class="label-for-pointbox" for="required-cb">
+								<input
+									type="checkbox"
+									id="required-cb"
+									name="required"
+									value="required"
+									class="touched"
+									required
+								/>
+								required
+							</label>
+						</div>
+					</div>
+					<!-- RADIOBUTTON -->
+					<div id="checkbox-inputs">
+						<h4 class="mb-05">Radio Button</h4>
+						<div class="row g-1">
+							<label class="label-for-pointbox" for="italian-rb">
+								<input
+									type="radio"
+									id="italian-rb"
+									name="language"
+									value="italian"
+								/>
+								Italiano
+							</label>
+							<label class="label-for-pointbox" for="english-rb">
+								<input
+									type="radio"
+									id="english-rb"
+									name="language"
+									value="english"
+									checked
+								/>
+								English
+							</label>
+							<label class="label-for-pointbox" for="japanese-rb">
+								<input
+									type="radio"
+									id="japanese-rb"
+									name="language"
+									value="japanese"
+								/>
+								日本語
+							</label>
+							<label class="label-for-pointbox" for="disabled-rb">
+								<input
+									type="radio"
+									id="disabled-rb"
+									name="language-disabled"
+									value="disabled"
+									disabled
+								/>
+								disabled
+							</label>
+							<label class="label-for-pointbox" for="loading-rb">
+								<input
+									type="radio"
+									id="loading-rb"
+									name="language-loading"
+									value="loading"
+									class="loading"
+									checked
+									disabled
+								/>
+								loading
+							</label>
+							<label class="label-for-pointbox" for="required-rb">
+								<input
+									type="radio"
+									id="required-rb"
+									name="language-required"
+									value="required"
+									class="touched"
+									required
+								/>
+								required
+							</label>
+						</div>
+					</div>
+					<!-- FILE UPLOAD -->
+					<div id="fileupload-inputs">
+						<h3 class="mb-05">File upload</h3>
+						<div class="row g-2">
+							<!-- NORMAL -->
+							<div>
+								<h4>Normal</h4>
+								<st-file-upload id="normal" multiple>
+									<span slot="upload-file-label" class="row cg-1 align-i-c">
+										upload file
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+									<span slot="drop-label"> drop it! </span>
+									<span slot="wrong-type-label"> can't drop this type! </span>
+									<span slot="wrong-multiple-label">
+										can't drop more then one file!
+									</span>
+									<span slot="disabled-label" class="row cg-1 align-i-c">
+										upload disabled
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+								</st-file-upload>
+							</div>
+							<!-- MULTIPLE NON ALLOWED -->
+							<div>
+								<h4>Multiple non allowed</h4>
+								<st-file-upload id="multiple-non-allowed">
+									<span slot="upload-file-label" class="row cg-1 align-i-c">
+										upload file
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+
+									<span slot="drop-label"> drop it! </span>
+
+									<span slot="wrong-type-label"> can't drop this type! </span>
+
+									<span slot="wrong-multiple-label">
+										can't drop more then one file!
+									</span>
+
+									<span slot="disabled-label" class="row cg-1 align-i-c">
+										upload disabled
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+								</st-file-upload>
+							</div>
+
+							<!-- ONLY IMAGES ALLOWED -->
+							<div>
+								<h4>Only images allowed</h4>
+								<st-file-upload id="only-images" multiple accept="image/*">
+									<span slot="upload-file-label" class="row cg-1 align-i-c">
+										upload image
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+									<span slot="drop-label"> drop image! </span>
+									<span slot="wrong-type-label"> only images allowed! </span>
+									<span slot="wrong-multiple-label">
+										can't drop more then one file!
+									</span>
+									<span slot="disabled-label" class="row cg-1 align-i-c">
+										upload disabled
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+								</st-file-upload>
+							</div>
+							<!-- DISABLED -->
+							<div>
+								<h4>Disabled</h4>
+								<st-file-upload id="disabled" disabled>
+									<span slot="upload-file-label" class="row cg-1 align-i-c">
+										upload file
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+									<span slot="drop-label"> drop it! </span>
+									<span slot="wrong-type-label"> can't drop this type! </span>
+									<span slot="wrong-multiple-label">
+										can't drop more then one file!
+									</span>
+									<span slot="disabled-label" class="row cg-1 align-i-c">
+										upload disabled
+										<div class="icon file-upload size-15 bg-light"></div>
+									</span>
+								</st-file-upload>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- TOAST -->
+			<div id="toast" class="column rg-2">
+				<h2>Toasts</h2>
+				<div class="row cg-1">
+					<!-- NORMAL -->
+					<div>
+						<h3>Normal</h3>
+						<st-toast> i bring info </st-toast>
+					</div>
+					<!-- SUCCESS -->
+					<div>
+						<h3>Success</h3>
+						<st-toast type="success"> i bring good news </st-toast>
+					</div>
+					<!-- ERROR -->
+					<div>
+						<h3>Error</h3>
+						<st-toast type="error"> i bring terror </st-toast>
+					</div>
+					<!-- WARNING -->
+					<div>
+						<h3>Warning</h3>
+						<st-toast type="warning"> i bring warnings </st-toast>
+					</div>
+				</div>
+			</div>
+			<!-- MODAL -->
+			<div id="modal" class="column rg-2">
+				<h2>Modals</h2>
+				<div class="row cg-1">
+					<button id="open-base-modal-btn">Modal one</button>
+					<st-modal id="base-modal">
+						<span slot="title">this is a title</span>
+						<p slot="content">this is the content</p>
+						<p slot="footer">this is the footer</p>
+					</st-modal>
+					<button id="open-second-modal-btn">Modal two</button>
+					<st-modal id="second-modal">
+						<span slot="title">this one is more complex</span>
+						<div slot="content">
+							<p>anything can be inside this modal</p>
+							<img class="w-100" src="/images/logo/logo.png" alt="" />
+						</div>
+						<div slot="footer" class="row cg-1">
+							<button id="can-do-so-many-things" class="blue">
+								we can do so many things
+							</button>
+							<button id="see-so-much-stuff" class="green">
+								see so much stuff
+							</button>
+						</div>
+					</st-modal>
+				</div>
+			</div>
+			<!-- NAVBAR -->
+			<div id="navbar">
+				<h2>Navbar</h2>
+				<i>this is encapsuled to avoid putting it in the whole page</i>
+				<div
+					style="
+						height: 85vh;
+						width: 100%;
+						border: 1px solid grey;
+						position: relative;
+						background-image: url(&quot;/images/logo/logo.png&quot;);
+						background-position-x: center;
+						background-size: contain;
+						background-repeat: no-repeat;
+					"
+				>
+					<st-navbar>
+						<div slot="content">
+							<a class="button light" href="#">a link button</a>
+						</div>
+					</st-navbar>
+				</div>
+			</div>
+		</div>
+		<div id="toast-wrapper" class="column rg-1 p-1"></div>
+	</body>
+	<!-- STYLE FOR THIS PAGE -->
+	<style>
+		.box {
+			height: 5rem;
+			width: 5rem;
+		}
+
+		#toast-wrapper {
+			position: fixed;
+			z-index: 2;
+			bottom: 0.5rem;
+			right: 0.5rem;
+			max-height: 80vh;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		#toast-wrapper > st-toast {
+			opacity: 0;
+			animation: slide-left-fade-in 0.2s ease-in-out forwards;
+		}
+	</style>
+	<!-- SECTION - IMPORT WEBCOMPONENTS -->
+	<script
+		type="module"
+		src="./src/1.0/components/file-upload.web-component.ts"
+	></script>
+	<script
+		type="module"
+		src="./src/1.0/components/modal.web-component.ts"
+	></script>
+	<script
+		type="module"
+		src="./src/1.0/components/navbar.web-component.ts"
+	></script>
+	<script
+		type="module"
+		src="./src/1.0/components/toast.web-component.ts"
+	></script>
+	<!-- !SECTION - IMPORT WEBCOMPONENTS -->
+	<!-- SECTION - SCRIPT -->
+	<script>
+		//type is ModalWebComponent
+		const baseModalRef = document.querySelector("#base-modal");
+		const baseModalBtnRef = document.querySelector("#open-base-modal-btn");
+		baseModalBtnRef.addEventListener("click", () => {
+			baseModalRef.openModal();
+		});
+
+		//type is ModalWebComponent
+		const secondModalRef = document.querySelector("#second-modal");
+		const secondModalRefBtnRef = document.querySelector(
+			"#open-second-modal-btn",
+		);
+		secondModalRefBtnRef.addEventListener("click", () => {
+			secondModalRef.openModal();
+		});
+
+		const canDoSoManyThingsBtn = document.querySelector(
+			"#can-do-so-many-things",
+		);
+		const seeSoMuchStuffBtn = document.querySelector("#see-so-much-stuff");
+
+		canDoSoManyThingsBtn.addEventListener("click", () => {
+			alert("I'm responsive");
+		});
+		seeSoMuchStuffBtn.addEventListener("click", () => {
+			location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+		});
+
+		//handle toast on wrong type drop
+		const onlyImagesUpload = document.querySelector("#only-images");
+		const toastWrapper = document.getElementById("toast-wrapper");
+		onlyImagesUpload.addEventListener("wrong-types-loaded", (event) => {
+			const customEvent = event;
+			const wrongFiles = customEvent.detail.wrongTypes;
+			const message = wrongFiles
+				.map(
+					(file) =>
+						`File "${file.name}" not accepted (${file.type || "unknown type"})`,
+				)
+				.join("\n");
+			const toast = document.createElement("st-toast");
+			toast.setAttribute("type", "error");
+			const p = document.createElement("p");
+			p.innerText = message;
+			toast.appendChild(p);
+			toastWrapper.append(toast);
+			toast.startCountdown(3 * 1000);
+		});
+	</script>
+	<!-- !SECTION - SCRIPT -->
+</html>

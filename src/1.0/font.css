@@ -1,0 +1,66 @@
+/* apply font everywhere */
+*, 
+body { font-family: "Satoshi"; }
+
+/* SECTION - WEIGHT */
+.fw-300 {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 300;
+}
+
+.fw-400 {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 400;
+}
+
+.fw-500 {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 500;
+}
+
+.fw-700 {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 700;
+}
+
+.fw-900 {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 900;
+}
+
+b, strong { font-weight: bolder; }
+
+i { font-style: italic; }
+
+/* SECTION - ITALIC COMBO */
+.fw-300-i {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.fw-400-i {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.fw-500-i {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 500;
+	font-style: italic;
+}
+
+.fw-700-i {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.fw-900-i {
+	font-family: "Satoshi", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+}
+/* !SECTION - ITALIC COMBO */
+/* !SECTION - WEIGHT */

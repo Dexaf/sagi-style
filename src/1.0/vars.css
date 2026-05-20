@@ -1,0 +1,18 @@
+/* NOTE - this must be the first one to be imported */
+:root {
+	/* colors */
+	--sag-color-green: #43ffb1;
+	--sag-color-blue: #3962ff;
+	--sag-color-red: #ff3939;
+	--sag-color-yellow: #ffe839;
+	--sag-color-light: #ffffff;
+	--sag-color-dark: #000000;
+	--sag-color-shadow: #555555;
+
+	--font-base: 1rem; /* base text size (user default 16px) */
+	--font-lg: 1.125rem; /* large text size (ca. 18px) */
+	--font-sm: 0.875rem; /* small text size (ca. 14px) */
+	/* min and max size of font */
+	--fs-min: 0.875rem;
+	--fs-max: 1.125rem;
+}

@@ -1,0 +1,102 @@
+/* Header container */
+header { position: relative; z-index: 2; }
+
+header > * { width: 128px; }
+
+/* SECTION - NAVBAR DROP MENU */
+#navbar-drop-menu {
+	background-color: color-mix(
+		in srgb,
+		var(--sag-color-dark) 80%,
+		var(--sag-color-light) 20%
+	);
+	position: relative;
+	z-index: 2;
+	height: 0;
+	overflow-y: hidden;
+	display: none;
+}
+
+#navbar-drop-menu.show { display: block; }
+
+#navbar-drop-menu.show {
+	/* NOTE -   to avoid overflow y bar to flash during resize of height 
+                we make it appear with an animation after the height resize is done 
+    */
+	animation:
+		size-to-height 0.2s 0.1s ease-out forwards,
+		add-scroll-y 0.1s 0.3s forwards;
+}
+
+@keyframes size-to-height {
+	0% { height: 0; }
+	100% { height: 50vh; }
+}
+
+#navbar-drop-menu.show ~ #navbar-shadow-curtain {
+	display: block;
+	animation: fade-in 0.2s ease-out forwards;
+}
+/* !SECTION - NAVBAR DROP MENU */
+
+/* SECTION - LOGO LINK */
+/* Logo link wrapper */
+#logo-link {
+	width: 128px;
+	height: 128px;
+	transition: transform 0.15s;
+}
+
+#logo-link:active { transform: scale(0.95); }
+
+/* Logo base style */
+.logo {
+	width: 100%;
+	max-width: 128px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+	header > * { width: 80px; }
+
+	.logo { max-width: 80px; }
+
+	#logo-link {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+/* Layer positioning */
+.layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Blue layer hover/active animation */
+#logo-link:hover .layer.blue,
+#logo-link:active .layer.blue {
+	filter: drop-shadow(0px 0px 0px var(--sag-color-blue));
+	animation: moveBlue 0.15s forwards;
+}
+
+@keyframes moveBlue {
+	from { filter: drop-shadow(0px 0px 0px var(--sag-color-blue)); }
+
+	to { filter: drop-shadow(-5px 0px 0px var(--sag-color-blue)); }
+}
+
+/* Green layer hover/active animation */
+#logo-link:hover .layer.green,
+#logo-link:active .layer.green {
+	filter: drop-shadow(0px 0px 0px var(--sag-color-green));
+	animation: moveGreen 0.15s forwards;
+}
+
+@keyframes moveGreen {
+	from { filter: drop-shadow(0px 0px 0px var(--sag-color-green)); }
+
+	to { filter: drop-shadow(5px 0px 0px var(--sag-color-green)); }
+}
+/* !SECTION - LOGO LINK */

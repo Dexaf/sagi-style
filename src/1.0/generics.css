@@ -1,0 +1,114 @@
+* {
+  scrollbar-color: var(--sag-color-dark) var(--sag-color-light);
+  scrollbar-width: 10px;
+  scroll-behavior: smooth;
+}
+
+.rounded-05 { border-radius: 0.5rem; }
+.rounded-1 { border-radius: 1rem; }
+.rounded-15 { border-radius: 1.5rem; }
+.rounded-2 { border-radius: 2rem; }
+
+.t-uppercase { text-transform: uppercase; }
+.t-capitalize { text-transform: capitalize; }
+.t-lowercase { text-transform: lowercase; }
+
+.t-a-start { text-align: start; }
+.t-a-center { text-align: center; }
+.t-a-end { text-align: end; }
+
+.t-light { color: var(--sag-color-light) }
+.t-dark { color: var(--sag-color-dark) }
+.t-blue { color: var(--sag-color-blue) }
+.t-green { color: var(--sag-color-green) }
+.t-red { color: var(--sag-color-red) }
+
+.bg-light { background-color: var(--sag-color-light) }
+.bg-dark { background-color: var(--sag-color-dark) }
+.bg-blue { background-color: var(--sag-color-blue) }
+.bg-green { background-color: var(--sag-color-green) }
+.bg-red { background-color: var(--sag-color-red) }
+.bg-yellow { background-color: var(--sag-color-yellow) }
+ 
+.bord-col-light,
+.bord-col-dark,
+.bord-col-blue,
+.bord-col-red,
+.bord-col-yellow,
+.bord-col-green { border: 1px solid;}
+
+.bord-col-light { border-color: var(--sag-color-light) }
+.bord-col-dark { border-color: var(--sag-color-dark) }
+.bord-col-blue { border-color: var(--sag-color-blue) }
+.bord-col-green { border-color: var(--sag-color-green) }
+.bord-col-red { border-color: var(--sag-color-red) }
+.bord-col-yellow { border-color: var(--sag-color-yellow) }
+
+/* SECTION - SHADOWS */
+.shadow-light { box-shadow: 5px 3px 0px 0px var(--sag-color-light); }
+.shadow-dark  { box-shadow: 5px 3px 0px 0px var(--sag-color-dark); }
+.shadow-blue  { box-shadow: 5px 3px 0px 0px var(--sag-color-blue); }
+.shadow-green { box-shadow: 5px 3px 0px 0px var(--sag-color-green); }
+.shadow-red { box-shadow: 5px 3px 0px 0px var(--sag-color-red); }
+.shadow-yellow { box-shadow: 5px 3px 0px 0px var(--sag-color-yellow); }
+
+.shadow-light.dbl-shadow { box-shadow:
+    5px 3px 0px 0px var(--sag-color-light),
+   -5px -3px 0px 0px var(--sag-color-dark);
+}
+
+.shadow-dark.dbl-shadow {
+  box-shadow:
+    5px 3px 0px 0px var(--sag-color-dark),
+   -5px -3px 0px 0px var(--sag-color-light);
+}
+
+.shadow-blue.dbl-shadow {
+  box-shadow:
+    5px 3px 0px 0px var(--sag-color-blue),
+   -5px -3px 0px 0px var(--sag-color-green);
+}
+
+.shadow-green.dbl-shadow {
+  box-shadow:
+    5px 3px 0px 0px var(--sag-color-green),
+   -5px -3px 0px 0px var(--sag-color-blue);
+}
+
+.shadow-red.dbl-shadow {
+  box-shadow:
+    5px 3px 0px 0px var(--sag-color-red),
+   -5px -3px 0px 0px color-mix(in srgb, var(--sag-color-red) 80%, white 20%);
+}
+
+.shadow-yellow.dbl-shadow {
+  box-shadow:
+    5px 3px 0px 0px var(--sag-color-yellow),
+   -5px -3px 0px 0px color-mix(in srgb, var(--sag-color-yellow) 80%, white 20%);
+}
+/* !SECTION - SHADOWS */
+
+/* dark background */
+.shadow-curtain {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+
+	background-color: rgba(0, 0, 0, 0.75);
+	backdrop-filter: blur(4px);
+	
+	cursor: pointer;
+
+  /* NOTE - when using shadow curtain, remember to set back opacity and display */
+  opacity: 0;
+  display: none;
+
+	transition: background-color 0.2s;
+}
+
+.shadow-curtain:hover { background-color: rgba(0, 0, 0, 0.85); }
+
+.shadow-curtain:active { background-color: rgba(0, 0, 0, 0.9); }

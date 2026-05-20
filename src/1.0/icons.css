@@ -1,0 +1,52 @@
+.icon {
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon.size-1 { width: 1rem; height: 1rem; }
+.icon.size-15 { width: 1.5rem; height: 1.5rem; }
+.icon.size-2 { width: 2rem; height: 2rem; }
+.icon.size-25 { width: 2.5rem; height: 2.5rem; }
+.icon.size-3 { width: 3rem; height: 3rem; }
+.icon.size-35 { width: 3.5rem; height: 3.5rem; }
+.icon.size-4 { width: 4rem; height: 4rem; }
+.icon.size-45 { width: 4.5rem; height: 4.5rem; }
+.icon.size-5 { width: 5rem; height: 5rem; }
+
+.icon.list {
+  mask-image: url('/icon/list.svg');
+  -webkit-mask-image: url('/icon/list.svg');
+}
+
+.icon.arrow-right {
+  mask-image: url('/icon/arrow-right.svg');
+  -webkit-mask-image: url('/icon/arrow-right.svg');
+}
+
+.icon.arrow-left {
+  mask-image: url('/icon/arrow-left.svg');
+  -webkit-mask-image: url('/icon/arrow-left.svg');
+}
+
+.icon.menu {
+  mask-image: url('/icon/menu.svg');
+  -webkit-mask-image: url('/icon/menu.svg');
+}
+
+.icon.close {
+  mask-image: url('/icon/close.svg');
+  -webkit-mask-image: url('/icon/close.svg');
+}
+
+.icon.file-upload {
+  mask-image: url('/icon/file-upload.svg');
+  -webkit-mask-image: url('/icon/file-upload.svg');
+}
+
+.icon.file-written {
+  mask-image: url('/icon/file-written.svg');
+  -webkit-mask-image: url('/icon/file-written.svg');
+}

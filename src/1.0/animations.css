@@ -1,0 +1,19 @@
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes slide-left-fade-in {
+	0% { opacity: 0; transform: translateX(100%); }
+	100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-left-fade-out {
+	0% { opacity: 1; transform: translateX(0); }
+	100% { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes add-scroll-y {
+    0% { overflow-y: hidden; }
+	100% { overflow-y: auto; }
+}

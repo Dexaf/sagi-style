@@ -1,0 +1,162 @@
+/* SECTION - BASE GRAPHIC */
+/* container for web component, the label wraps everything */
+.label-for-file-upload {
+	/* size */
+	height: 300px;
+	width: 350px;
+
+	/* graphic */
+	background-color: var(--sag-color-light);
+	border: 0.5rem dashed var(--sag-color-dark);
+	transition: 0.2s box-shadow, 0.2s opacity;
+	cursor: pointer;
+}
+
+.disabled-label,
+.file-preview-container,
+.upload-file-label-wrapper,
+.drop-label,
+.wrong-type-label,
+.wrong-multiple-label {
+	/* size */
+	padding: 0.5rem 1rem;
+
+	/* graphic */
+	background-color: rgba(0, 0, 0, 0.75);
+	color: var(--sag-color-light);
+	font-weight: bold;
+	transition: 0.2s background-color;
+}
+
+/* darken bg with hover */
+.label-for-file-upload:hover .upload-file-label-wrapper,
+.label-for-file-upload:hover .drop-label,
+.label-for-file-upload:hover .wrong-type-label,
+.label-for-file-upload:hover .wrong-multiple-label {
+	/* graphic */
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* holder of loading */
+.input-file-loading-container {
+	position: relative;
+	width: 80%;
+	height: 80%;
+}
+
+/* wrapper for file preview container and clean file button */
+.file-preview-wrapper {
+	width: 90%;
+}
+
+/* preview of files and names */
+.file-preview-container {
+	height: 70%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* image handler */
+.file-preview-container img {
+	width: auto;
+	max-height: 140px;
+}
+
+.input-file-loading-container::before,
+.input-file-loading-container::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background-image: url("/images/logo/logo-small.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation: rotate-logo 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate-logo {
+	0% { transform: rotateZ(0deg); }
+	100% { transform: rotateZ(360deg); }
+}
+/* !SECTION - BASE GRAPHIC */
+
+/* SECTION - STATE BASED SHOWN */
+/* IS NORMAL */
+.label-for-file-upload.is-normal .disabled-label,
+.label-for-file-upload.is-normal .drop-label,
+.label-for-file-upload.is-normal .input-file-loading-container,
+.label-for-file-upload.is-normal .wrong-type-label,
+.label-for-file-upload.is-normal .wrong-multiple-label, 
+.label-for-file-upload.is-normal .file-preview-wrapper {
+	display: none;
+}
+
+/* IS LOADING */
+.label-for-file-upload.is-loading .disabled-label,
+.label-for-file-upload.is-loading .drop-label,
+.label-for-file-upload.is-loading .upload-file-label-wrapper,
+.label-for-file-upload.is-loading .wrong-type-label,
+.label-for-file-upload.is-loading .wrong-multiple-label, 
+.label-for-file-upload.is-loading .file-preview-wrapper {
+	display: none;
+}
+
+/* HAS FILE */
+.label-for-file-upload.has-files .disabled-label,
+.label-for-file-upload.has-files .drop-label,
+.label-for-file-upload.has-files .input-file-loading-container,
+.label-for-file-upload.has-files .upload-file-label-wrapper,
+.label-for-file-upload.has-files .wrong-type-label,
+.label-for-file-upload.has-files .wrong-multiple-label {
+	display: none;
+}
+
+/* IS DRAG */
+.label-for-file-upload.is-drag .disabled-label,
+.label-for-file-upload.is-drag .upload-file-label-wrapper,
+.label-for-file-upload.is-drag .input-file-loading-container,
+.label-for-file-upload.is-drag .wrong-type-label,
+.label-for-file-upload.is-drag .wrong-multiple-label, 
+.label-for-file-upload.is-drag .file-preview-wrapper {
+	display: none;
+}
+
+/* IS WRONG MULTIPLE */
+.label-for-file-upload.is-wrong-multiple .upload-file-label-wrapper,
+.label-for-file-upload.is-wrong-multiple .input-file-loading-container,
+.label-for-file-upload.is-wrong-multiple .wrong-type-label,
+.label-for-file-upload.is-wrong-multiple .drop-label, 
+.label-for-file-upload.is-wrong-multiple .disabled-label, 
+.label-for-file-upload.is-wrong-multiple .file-preview-wrapper {
+	display: none;
+}
+
+/* IS WRONG TYPE */
+.label-for-file-upload.is-wrong-type .upload-file-label-wrapper,
+.label-for-file-upload.is-wrong-type .input-file-loading-container,
+.label-for-file-upload.is-wrong-type .wrong-multiple-label,
+.label-for-file-upload.is-wrong-type .drop-label, 
+.label-for-file-upload.is-wrong-type .disabled-label, 
+.label-for-file-upload.is-wrong-type .file-preview-wrapper {
+	display: none;
+}
+
+/* IS DISABLED */
+.label-for-file-upload.is-disabled .upload-file-label-wrapper,
+.label-for-file-upload.is-disabled .input-file-loading-container,
+.label-for-file-upload.is-disabled .wrong-type-label,
+.label-for-file-upload.is-disabled .wrong-multiple-label,
+.label-for-file-upload.is-disabled .drop-label, 
+.label-for-file-upload.is-disabled .file-preview-wrapper {
+	display: none;
+}
+/* !SECTION - STATE BASED SHOWN */
+
+/* SECTION - FIX BASED ON STATUS */
+/* IS DISABLED */
+.label-for-file-upload.is-disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+/* !SECTION - FIX BASED ON STATUS */

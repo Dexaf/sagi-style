@@ -1,0 +1,43 @@
+/* set base size from root of dom */
+html { 
+	font-size: var(--font-base); 
+	font-size: clamp(var(--fs-min), 1vw + 1rem, var(--fs-max)); 
+}
+
+/* change in size for tablet displays */
+@media (max-width: 1200px) {
+	:root { 
+		--fs-min: 0.8125rem; 
+		--fs-max: 1rem; 
+	}
+
+	html { 
+		font-size: var(--font-base); 
+		font-size: clamp(var(--fs-min), 2vw + 0.75rem, var(--fs-max)); 
+	}
+}
+
+/* change in size for mobile displays */
+@media (max-width: 700px) {
+	:root { --fs-min: 0.75rem; --fs-max: 0.875rem; }
+	html { font-size: var(--font-base); font-size: clamp(var(--fs-min), 3vw + 0.5rem, var(--fs-max)); }
+}
+
+body, 
+p, 
+a, 
+li, 
+button, 
+input { font-size: 1rem; line-height: 1.5; }
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+small { font-size: 0.875rem; }
+
+.text-lg { font-size: var(--font-lg); }
+.text-sm { font-size: var(--font-sm); }

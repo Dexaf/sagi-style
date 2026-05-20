@@ -1,0 +1,345 @@
+/* SECTION - BUTTONS */
+button,
+.button {
+	border: 1px solid;
+	border-color: var(--sag-color-dark);
+	padding: 0.5rem 1rem;
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-dark);
+	cursor: pointer;
+	display: inline-block;
+	box-shadow:
+		0px 0px 0px 0px var(--sag-color-green),
+		0px 0px 0px 0px var(--sag-color-blue);
+	position: relative;
+	transition:
+		color 0.2s,
+		border-color 0.2s,
+		background-color 0.2s,
+		box-shadow 0.1s,
+		opacity 0.2s;
+	width: fit-content;
+}
+
+/* FIXES */
+a.button {
+	text-decoration: none;
+}
+
+/* DISABLED */
+button:disabled,
+.button:disabled {
+	opacity: 0.8;
+	cursor: not-allowed;
+}
+
+/* LOADING */
+/* icon layer on loading button */
+button.loading::before,
+.button.loading::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	background-image: url("/images/logo/logo-small.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation: rotate-logo 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate-logo {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+button .icon,
+.button .icon {
+	background-color: var(--sag-color-light);
+}
+
+/* opacity layer on loading button */
+button.loading::after,
+.button.loading::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+	background-color: var(--sag-color-dark);
+	opacity: 0.7;
+}
+
+button:hover:not(:disabled),
+.button:hover:not(:disabled) {
+	border-color: var(--sag-color-light);
+	color: var(--sag-color-dark);
+	background-color: var(--sag-color-light);
+	box-shadow:
+		5px 3px 0px 0px var(--sag-color-green),
+		-5px -3px 0px 0px var(--sag-color-blue);
+
+	/* NOTE - this is needed to make the shadow go over near elements */
+	z-index: 1;
+}
+
+.button:hover:not(:disabled) .icon,
+button:hover:not(:disabled) .icon {
+	background-color: var(--sag-color-dark);
+}
+
+button:active:not(:disabled),
+.button:active:not(:disabled) {
+	border-color: var(--sag-color-dark);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-dark);
+	box-shadow:
+		-5px 3px 0px 0px var(--sag-color-green),
+		5px -3px 0px 0px var(--sag-color-blue);
+	z-index: 1;
+}
+
+.button:active:not(:disabled) .icon,
+button:active:not(:disabled) .icon {
+	background-color: var(--sag-color-light);
+}
+
+/* SECTION - BUTTON VARIATIONS */
+/* LIGHT */
+button.light,
+.button.light {
+	color: var(--sag-color-dark);
+	background-color: var(--sag-color-light);
+}
+
+button.light:hover:not(:disabled),
+.button.light:hover:not(:disabled) {
+	border-color: var(--sag-color-dark);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-dark);
+}
+
+button.light:active:not(:disabled),
+.button.light:active:not(:disabled) {
+	color: var(--sag-color-dark);
+	background-color: var(--sag-color-light);
+}
+
+/* fixed for buttons with icons */
+.button.light:not(:disabled) .icon,
+button.light:not(:disabled) .icon {
+	background-color: var(--sag-color-dark);
+}
+
+.button.light:hover:not(:disabled) .icon,
+button.light:hover:not(:disabled) .icon {
+	background-color: var(--sag-color-light);
+}
+
+/* BLUE */
+button.blue,
+.button.blue {
+	border-color: var(--sag-color-blue);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-blue);
+}
+
+/* GREEN */
+button.green,
+.button.green {
+	border-color: var(--sag-color-green);
+	color: var(--sag-color-dark);
+	background-color: var(--sag-color-green);
+}
+/* !SECTION - BUTTON VARIATIONS */
+/* !SECTION - BUTTONS */
+
+/* INPUTS */
+input {
+	border: 1px solid var(--sag-color-dark);
+	border-radius: 1rem;
+	padding: 0.3rem 0.8rem;
+	position: relative;
+	transition:
+		background-color 0.2s,
+		box-shadow 0.2s,
+		border-color 0.2s;
+}
+
+input:focus {
+	box-shadow: 0px 0px 3px 0px var(--sag-color-shadow);
+}
+
+input:read-only:not(:disabled) {
+	opacity: 0.8;
+	border-color: rgb(225, 225, 225);
+	background-color: rgb(225, 225, 225);
+}
+
+input:disabled {
+	border-color: rgb(200, 200, 200);
+	background-color: rgb(225, 225, 225);
+	cursor: not-allowed;
+}
+
+input:focus {
+	border-color: var(--sag-color-blue);
+}
+
+input:read-only:not(:disabled):focus {
+	border-color: rgb(201, 201, 201);
+}
+
+/* NOTE - touched is a custom class, it has to be applied inside the application */
+input.touched:invalid {
+	background-color: color-mix(in srgb, var(--sag-color-red) 40%, var(--sag-color-light) 60%);
+	border-color:  var(--sag-color-red);
+}
+
+input.touched:valid {
+	background-color: color-mix(
+		in srgb,
+		var(--sag-color-green) 40%,
+		var(--sag-color-light) 60%
+	);
+	border-color: var(--sag-color-green);
+}
+
+input.loading {
+	background-color: rgb(225, 225, 225);
+	animation: pulse-bg 1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulse-bg {
+	0% {
+		background-color: rgb(225, 225, 225);
+	}
+	100% {
+		background-color: rgb(205, 205, 205);
+	}
+}
+
+label {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* SECTION - RADIOBUTTON AND CHECKBOX */
+.label-for-pointbox > input[type="radio"],
+.label-for-pointbox > input[type="checkbox"] {
+	/* padding is needed to reset previous input css */
+	padding: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1.3rem;
+	height: 1.3rem;
+	border: 2px solid var(--sag-color-dark);
+	border-radius: 4px;
+	background-color: var(--sag-color-light);
+	display: grid;
+	place-content: center;
+	cursor: pointer;
+}
+
+/* NOTE - touched is a custom class, it has to be applied inside the application */
+.label-for-pointbox > input[type="radio"].touched:invalid,
+.label-for-pointbox > input[type="checkbox"].touched:invalid {
+	background-color: color-mix(in srgb,  var(--sag-color-red) 40%, var(--sag-color-light) 60%);
+	border-color:  var(--sag-color-red);
+}
+
+/* checkbox in hover */
+.label-for-pointbox:hover > input[type="radio"],
+.label-for-pointbox
+	> input[type="radio"]:hover
+	.label-for-pointbox:hover
+	> input[type="checkbox"],
+.label-for-pointbox > input[type="checkbox"]:hover {
+	box-shadow:
+		3px 2px 0px 0px var(--sag-color-green),
+		-3px -2px 0px 0px var(--sag-color-blue);
+	z-index: 1;
+}
+
+/* checkbox in active */
+.label-for-pointbox:active > input[type="radio"],
+.label-for-pointbox
+	> input[type="radio"]:active
+	.label-for-pointbox:active
+	> input[type="checkbox"],
+.label-for-pointbox > input[type="checkbox"]:active {
+	box-shadow:
+		-3px 2px 0px 0px var(--sag-color-green),
+		3px -2px 0px 0px var(--sag-color-blue);
+	z-index: 1;
+}
+
+.label-for-pointbox:hover > input[type="radio"]:disabled,
+.label-for-pointbox > input[type="radio"]:hover:disabled,
+.label-for-pointbox:hover > input[type="checkbox"]:disabled,
+.label-for-pointbox > input[type="checkbox"]:hover:disabled {
+	box-shadow: 0px 0px 0px 0px var(--sag-color-shadow);
+}
+
+/* checkbox when checked */
+.label-for-pointbox > input[type="radio"]:checked,
+.label-for-pointbox > input[type="checkbox"]:checked {
+	background-color: var(--sag-color-dark);
+}
+
+.label-for-pointbox > input[type="radio"]:disabled,
+.label-for-pointbox > input[type="checkbox"]:disabled {
+	opacity: 0.8;
+	border-color: rgb(225, 225, 225);
+	background-color: rgb(225, 225, 225);
+}
+
+.label-for-pointbox:has(> input[type="radio"]:disabled),
+.label-for-pointbox:has(> input[type="radio"].loading),
+.label-for-pointbox > input[type="radio"]:disabled,
+.label-for-pointbox
+	> input[type="radio"].loading
+	.label-for-pointbox:has(> input[type="checkbox"]:disabled),
+.label-for-pointbox:has(> input[type="checkbox"].loading),
+.label-for-pointbox > input[type="checkbox"]:disabled,
+.label-for-pointbox > input[type="checkbox"].loading {
+	cursor: not-allowed;
+}
+
+/* checkbox when checked > drawing inside */
+.label-for-pointbox > input[type="radio"]:checked::before,
+.label-for-pointbox > input[type="checkbox"]:checked::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background-color: var(--sag-color-light);
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.label-for-pointbox > input[type="radio"]:checked::before {
+	clip-path: circle(50%);
+}
+
+.label-for-pointbox > input[type="radio"]:focus,
+.label-for-pointbox > input[type="checkbox"]:focus {
+	border-color: var(--sag-color-dark);
+}
+
+.label-for-pointbox {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.label-for-pointbox > input[type="radio"] {
+	border-radius: 50%;
+}
+/* !SECTION - RADIOBUTTON AND CHECKBOX */

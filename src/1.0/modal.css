@@ -1,0 +1,65 @@
+/* SECTION - MODAL */
+/* modal container */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	justify-content: center;
+	align-items: center;
+
+	display: none;
+
+	z-index: 3;
+}
+
+.modal:not(.hidden) { display: flex; }
+
+.modal .shadow-curtain { 
+	display: block;
+	animation: fade-in 0.2s ease-out forwards;
+}
+
+/* modal body */
+.modal .modal-body {
+	z-index: 2;
+	box-shadow:
+		0px 0px 0px 0px var(--sag-color-green),
+		0px 0px 0px 0px var(--sag-color-blue);
+	opacity: 0;
+	transform: translateY(-10%);
+	animation: fade-in-drop 0.2s 0.2s ease-out forwards;
+}
+
+@keyframes fade-in-drop {
+	0% {
+		box-shadow:
+			0px 0px 0px 0px var(--sag-color-green),
+			0px 0px 0px 0px var(--sag-color-blue);
+		opacity: 0;
+		transform: translateY(-10%);
+	}
+	50% {
+		box-shadow:
+			0px 0px 0px 0px var(--sag-color-green),
+			0px 0px 0px 0px var(--sag-color-blue);
+		opacity: 1;
+		transform: translateY(0%);
+	}
+	100% {
+		box-shadow:
+			16px 9px 0px 0px var(--sag-color-green),
+			-16px -9px 0px 0px var(--sag-color-blue);
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+.modal .modal-content {
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 50vh;
+}
+/* !SECTION - MODAL */

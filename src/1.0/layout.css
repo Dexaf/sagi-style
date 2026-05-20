@@ -1,0 +1,96 @@
+/* SECTION - DISPLAY */
+.hidden { display: none; }
+.show-till-tab { display: inline-block; }
+.show-till-mob { display: inline-block; }
+.show-tab { display: none; }
+.show-mob { display: none; }
+
+@media (max-width: 1200px) {
+	.show-till-tab { display: none !important; }
+	.show-tab { display: inline-block; }
+}
+
+@media (max-width: 700px) {
+	.show-till-mob { display: none !important; }
+	.show-mob { display: inline-block; }
+}
+/* !SECTION - DISPLAY */
+
+/* SECTION - FLEXS */
+.row { display: flex; flex-direction: row; flex-wrap: wrap; }
+.column { display: flex; flex-direction: column; flex-wrap: wrap; }
+.no-wrap { flex-wrap: nowrap; }
+
+.just-sb { justify-content: space-between; }
+.just-se { justify-content: space-evenly; }
+.just-sa { justify-content: space-around; }
+.just-ce { justify-content: center; }
+.just-s { justify-content: start; }
+.just-c { justify-content: center; }
+.just-e { justify-content: end; }
+
+.align-i-c { align-items: center; }
+.align-i-s { align-items: start; }
+.align-i-e { align-items: end; }
+/* !SECTION - FLEXS */
+
+/* SECTION - GAP */
+.g-05 { gap: 0.5rem; }
+.g-1 { gap: 1rem; }
+.g-15 { gap: 1.5rem; }
+.g-2 { gap: 2rem; }
+.g-25 { gap: 2.5rem; }
+.g-3 { gap: 3rem; }
+.g-35 { gap: 3.5rem; }
+.g-4 { gap: 4rem; }
+.g-45 { gap: 4.5rem; }
+.g-5 { gap: 5rem; }
+
+.rg-05 { row-gap: 0.5rem; }
+.rg-1 { row-gap: 1rem; }
+.rg-15 { row-gap: 1.5rem; }
+.rg-2 { row-gap: 2rem; }
+.rg-25 { row-gap: 2.5rem; }
+.rg-3 { row-gap: 3rem; }
+.rg-35 { row-gap: 3.5rem; }
+.rg-4 { row-gap: 4rem; }
+.rg-45 { row-gap: 4.5rem; }
+.rg-5 { row-gap: 5rem; }
+
+.cg-05 { column-gap: 0.5rem; }
+.cg-1 { column-gap: 1rem; }
+.cg-15 { column-gap: 1.5rem; }
+.cg-2 { column-gap: 2rem; }
+.cg-25 { column-gap: 2.5rem; }
+.cg-3 { column-gap: 3rem; }
+.cg-35 { column-gap: 3.5rem; }
+.cg-4 { column-gap: 4rem; }
+.cg-45 { column-gap: 4.5rem; }
+.cg-5 { column-gap: 5rem; }
+/* !SECTION - GAP */
+
+/* SECTION - SIZES */
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+.wh-100 { width: 100%; height: 100%; }
+.mw-100 { max-width: 100%; }
+.mh-100 { max-height: 100%; }
+.mwh-100 { max-width: 100%; max-height: 100%; }
+/* !SECTION - SIZES */
+
+/* SECTION - CONTAINERS */
+.container-60 { width: 60%; }
+.container-75 { width: 75%; }
+.container-85 { width: 85%; }
+
+@media (max-width: 1200px) {
+	.container-60 { width: 80%; }
+	.container-75 { width: 85%; }
+	.container-85 { width: 95%; }
+}
+
+@media (max-width: 700px) {
+	.container-60 { width: 95%; }
+	.container-75 { width: 95%; }
+}
+/* !SECTION - CONTAINERS */
