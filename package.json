@@ -1,18 +1,23 @@
 {
-  "name": "@dexaf/sagi-style",
-  "version": "1.0.0",
-  "type": "module",
-  "author": "Federico Pisa - Sagitauros",
-  "description": "system design for sagitauros studio's inside applications",
-  "scripts": {
-    "dev": "vite --host",
-    "build-demo": "tsc && vite build --config vite.config.demo.ts",
-    "preview": "vite preview",
-    "publishPackage": "vite build --config vite.config.lib.ts & npm publish --access=public"
-  },
-  "devDependencies": {
-    "@types/node": "^25.7.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.12"
-  }
+	"name": "@dexaf/sagi-style",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Dexaf/sagi-style"
+	},
+  "license": "UNLICENSED",
+	"version": "1.0.0",
+	"type": "module",
+	"author": "Federico Pisa - Sagitauros",
+	"description": "system design for sagitauros studio's inside applications",
+	"scripts": {
+		"dev": "vite --host",
+		"build-demo": "tsc && vite build --config vite.config.demo.ts",
+		"preview": "vite preview",
+		"publishPackage": "vite build --config vite.config.lib.ts & npm publish --access=public"
+	},
+	"devDependencies": {
+		"@types/node": "^25.7.0",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.12"
+	}
 }
