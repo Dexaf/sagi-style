@@ -4,17 +4,20 @@
 		"type": "git",
 		"url": "git+https://github.com/Dexaf/sagi-style"
 	},
-  "license": "UNLICENSED",
-	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"version": "1.1.0",
 	"type": "module",
 	"author": "Federico Pisa - Sagitauros",
 	"description": "system design for sagitauros studio's inside applications",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "vite --host",
 		"build-lib-test": "vite build --config vite.config.lib.ts",
 		"build-demo": "tsc && vite build --config vite.config.demo.ts",
 		"preview": "vite preview",
-		"publishPackage": "vite build --config vite.config.lib.ts & npm publish --access=public"
+		"publishPackage": "vite build --config vite.config.lib.ts && npm publish --access=public"
 	},
 	"devDependencies": {
 		"@types/node": "^25.7.0",
