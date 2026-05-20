@@ -1,12 +1,6 @@
 import { SagiHTMLElement } from "../classes/web-component.class.ts";
 import { styleUrl } from "./index-css-ref.ts";
 
-/** TODO -
- * loading
- * jitter when dragging file over wrapper with file loaded
- * maybe css should be streamlined
-  */
-
 /** const of state of the file upload input */
 const FILE_UPLOAD_STATE = {
     isDisabled: "is-disabled",
