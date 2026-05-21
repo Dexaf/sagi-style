@@ -8,8 +8,8 @@ export default defineConfig({
             name: 'index',
             formats: ['es'],
         },
-        assetsDir: 'assets',
+        assetsDir: 'public/sagi-style/assets',
         cssCodeSplit: true,
     },
-    base: './'
+    base: '/'
 })
