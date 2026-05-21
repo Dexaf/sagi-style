@@ -10,7 +10,7 @@ header > * { width: 128px; }
 		var(--sag-color-dark) 80%,
 		var(--sag-color-light) 20%
 	);
-	position: relative;
+	position: absolute;
 	z-index: 2;
 	height: 0;
 	overflow-y: hidden;
