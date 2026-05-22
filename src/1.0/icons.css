@@ -97,3 +97,13 @@
 	mask-image: url("/sagi-style/assets/icons/frame.svg");
 	-webkit-mask-image: url("/sagi-style/assets/icons/frame.svg");
 }
+
+.icon.star {
+	mask-image: url("/sagi-style/assets/icons/star.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/star.svg");
+}
+
+.icon.diagonal-squares {
+	mask-image: url("/sagi-style/assets/icons/diagonal-squares.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/diagonal-squares.svg");
+}
