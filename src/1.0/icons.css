@@ -1,52 +1,94 @@
 .icon {
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: cover;
-  width: 1rem;
-  height: 1rem;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: cover;
+	width: 1rem;
+	height: 1rem;
 }
 
-.icon.size-1 { width: 1rem; height: 1rem; }
-.icon.size-15 { width: 1.5rem; height: 1.5rem; }
-.icon.size-2 { width: 2rem; height: 2rem; }
-.icon.size-25 { width: 2.5rem; height: 2.5rem; }
-.icon.size-3 { width: 3rem; height: 3rem; }
-.icon.size-35 { width: 3.5rem; height: 3.5rem; }
-.icon.size-4 { width: 4rem; height: 4rem; }
-.icon.size-45 { width: 4.5rem; height: 4.5rem; }
-.icon.size-5 { width: 5rem; height: 5rem; }
+.icon.size-1 {
+	width: 1rem;
+	height: 1rem;
+}
+.icon.size-15 {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.icon.size-2 {
+	width: 2rem;
+	height: 2rem;
+}
+.icon.size-25 {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+.icon.size-3 {
+	width: 3rem;
+	height: 3rem;
+}
+.icon.size-35 {
+	width: 3.5rem;
+	height: 3.5rem;
+}
+.icon.size-4 {
+	width: 4rem;
+	height: 4rem;
+}
+.icon.size-45 {
+	width: 4.5rem;
+	height: 4.5rem;
+}
+.icon.size-5 {
+	width: 5rem;
+	height: 5rem;
+}
 
 .icon.list {
-  mask-image: url('/sagi-style/assets/icons/list.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/list.svg');
+	mask-image: url("/sagi-style/assets/icons/list.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/list.svg");
 }
 
 .icon.arrow-right {
-  mask-image: url('/sagi-style/assets/icons/arrow-right.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/arrow-right.svg');
+	mask-image: url("/sagi-style/assets/icons/arrow-right.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/arrow-right.svg");
 }
 
 .icon.arrow-left {
-  mask-image: url('/sagi-style/assets/icons/arrow-left.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/arrow-left.svg');
+	mask-image: url("/sagi-style/assets/icons/arrow-left.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/arrow-left.svg");
 }
 
 .icon.menu {
-  mask-image: url('/sagi-style/assets/icons/menu.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/menu.svg');
+	mask-image: url("/sagi-style/assets/icons/menu.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/menu.svg");
 }
 
 .icon.close {
-  mask-image: url('/sagi-style/assets/icons/close.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/close.svg');
+	mask-image: url("/sagi-style/assets/icons/close.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/close.svg");
 }
 
 .icon.file-upload {
-  mask-image: url('/sagi-style/assets/icons/file-upload.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/file-upload.svg');
+	mask-image: url("/sagi-style/assets/icons/file-upload.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/file-upload.svg");
 }
 
 .icon.file-written {
-  mask-image: url('/sagi-style/assets/icons/file-written.svg');
-  -webkit-mask-image: url('/sagi-style/assets/icons/file-written.svg');
+	mask-image: url("/sagi-style/assets/icons/file-written.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/file-written.svg");
+}
+
+.icon.mountains-w-sun {
+	mask-image: url("/sagi-style/assets/icons/mountains-w-sun.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/mountains-w-sun.svg");
+}
+
+.icon.woods {
+	mask-image: url("/sagi-style/assets/icons/woods.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/woods.svg");
+}
+
+.icon.walking-person {
+	mask-image: url("/sagi-style/assets/icons/walking-person.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/walking-person.svg");
 }
