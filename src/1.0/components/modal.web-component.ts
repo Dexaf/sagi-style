@@ -28,7 +28,10 @@ export class ModalWebComponent extends SagiHTMLElement {
     //SECTION - LIFECYCLE
     constructor() {
         super();
+    }
 
+    /** on component connected to dom */
+    connectedCallback() {
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
@@ -46,10 +49,7 @@ export class ModalWebComponent extends SagiHTMLElement {
         shadowRoot.adoptedStyleSheets = [sharedSheet];
         //append to dom
         shadowRoot.appendChild(templateContentHtml);
-    }
 
-    /** on component connected to dom */
-    connectedCallback() {
         //get ref to all of the elements inside the component
         this.closeModalBtnRef = this.shadowRoot?.querySelector(".close-button") as HTMLButtonElement;
         this.shadowCurtainRef = this.shadowRoot?.querySelector(".shadow-curtain") as HTMLElement;

@@ -60,7 +60,10 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     // SECTION - LIFECYCLE
     constructor() {
         super();
+    }
 
+    /** on component connected to dom */
+    connectedCallback() {
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
@@ -95,10 +98,7 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         shadowRoot.adoptedStyleSheets = [sharedSheet];
         //append to dom
         shadowRoot.appendChild(templateContentRef);
-    }
 
-    /** on component connected to dom */
-    connectedCallback() {
         //get ref to all of the elements inside the component
         this.inputRef = this.shadowRoot!.querySelector("input[type='file']") as HTMLInputElement;
         this.clearFileBtnRef = this.shadowRoot!.querySelector(".clear-file-btn") as HTMLButtonElement;
