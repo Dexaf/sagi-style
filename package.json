@@ -24,7 +24,7 @@
 		"build-lib-test": "vite build --config vite.config.lib.ts",
 		"build-demo": "tsc && vite build --config vite.config.demo.ts",
 		"preview": "vite preview",
-		"publishPackage": "vite build --config vite.config.lib.ts && npm publish --access=public"
+		"publish-package": "vite build --config vite.config.lib.ts && npm publish --access=public"
 	},
 	"devDependencies": {
 		"@types/node": "^25.7.0",
