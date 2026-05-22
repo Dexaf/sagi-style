@@ -92,3 +92,8 @@
 	mask-image: url("/sagi-style/assets/icons/walking-person.svg");
 	-webkit-mask-image: url("/sagi-style/assets/icons/walking-person.svg");
 }
+
+.icon.frame {
+	mask-image: url("/sagi-style/assets/icons/frame.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/frame.svg");
+}
