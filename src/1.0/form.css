@@ -348,3 +348,9 @@ label {
 	border-radius: 50%;
 }
 /* !SECTION - RADIOBUTTON AND CHECKBOX */
+
+/* FIX */
+input[type=range] {
+    box-shadow: none !important;
+    padding: 0 !important;
+}
