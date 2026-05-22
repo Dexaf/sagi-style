@@ -142,6 +142,11 @@ button.light:hover:not(:disabled) .icon {
 	background-color: var(--sag-color-light);
 }
 
+.button.light:active:not(:disabled) .icon,
+button.light:active:not(:disabled) .icon {
+	background-color: var(--sag-color-dark);
+}
+
 /* BLUE */
 button.blue,
 .button.blue {
