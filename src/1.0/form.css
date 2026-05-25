@@ -181,7 +181,7 @@ input:focus {
 	box-shadow: 0px 0px 3px 0px var(--sag-color-shadow);
 }
 
-input:read-only:not(:disabled) {
+input.readonly:not(:disabled) {
 	opacity: 0.8;
 	border-color: rgb(225, 225, 225);
 	background-color: rgb(225, 225, 225);
@@ -203,8 +203,12 @@ input:read-only:not(:disabled):focus {
 
 /* NOTE - touched is a custom class, it has to be applied inside the application */
 input.touched:invalid {
-	background-color: color-mix(in srgb, var(--sag-color-red) 40%, var(--sag-color-light) 60%);
-	border-color:  var(--sag-color-red);
+	background-color: color-mix(
+		in srgb,
+		var(--sag-color-red) 40%,
+		var(--sag-color-light) 60%
+	);
+	border-color: var(--sag-color-red);
 }
 
 input.touched:valid {
@@ -236,6 +240,36 @@ label {
 	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+/* COLOR INPUT */
+input[type="color" i] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	box-shadow: none;
+	padding: 0;
+	width: 48px;
+	height: 32px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="color" i]:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+input[type="color" i]::-webkit-color-swatch {
+	border-radius: 2rem;
+	border: none;
+}
+
+input[type="color" i]::-moz-color-swatch {
+	border-radius: 2rem;
+	border: none;
+}
+
 /* SECTION - RADIOBUTTON AND CHECKBOX */
 .label-for-pointbox > input[type="radio"],
 .label-for-pointbox > input[type="checkbox"] {
@@ -256,8 +290,12 @@ label {
 /* NOTE - touched is a custom class, it has to be applied inside the application */
 .label-for-pointbox > input[type="radio"].touched:invalid,
 .label-for-pointbox > input[type="checkbox"].touched:invalid {
-	background-color: color-mix(in srgb,  var(--sag-color-red) 40%, var(--sag-color-light) 60%);
-	border-color:  var(--sag-color-red);
+	background-color: color-mix(
+		in srgb,
+		var(--sag-color-red) 40%,
+		var(--sag-color-light) 60%
+	);
+	border-color: var(--sag-color-red);
 }
 
 /* checkbox in hover */
@@ -350,7 +388,7 @@ label {
 /* !SECTION - RADIOBUTTON AND CHECKBOX */
 
 /* FIX */
-input[type=range] {
-    box-shadow: none !important;
-    padding: 0 !important;
+input[type="range"] {
+	box-shadow: none !important;
+	padding: 0 !important;
 }

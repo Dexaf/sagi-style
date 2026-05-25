@@ -809,6 +809,7 @@
 						<input
 							id="input-readonly"
 							type="text"
+							class="readonly"
 							readonly
 							placeholder="readonly"
 						/>
@@ -981,91 +982,105 @@
 							</label>
 						</div>
 					</div>
-					<!-- FILE UPLOAD -->
-					<div id="fileupload-inputs">
-						<h3 class="mb-05">File upload</h3>
-						<div class="row g-2">
-							<!-- NORMAL -->
-							<div>
-								<h4>Normal</h4>
-								<st-file-upload id="normal" multiple>
-									<span slot="upload-file-label" class="row cg-1 align-i-c">
-										upload file
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-									<span slot="drop-label"> drop it! </span>
-									<span slot="wrong-type-label"> can't drop this type! </span>
-									<span slot="wrong-multiple-label">
-										can't drop more then one file!
-									</span>
-									<span slot="disabled-label" class="row cg-1 align-i-c">
-										upload disabled
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-								</st-file-upload>
-							</div>
-							<!-- MULTIPLE NON ALLOWED -->
-							<div>
-								<h4>Multiple non allowed</h4>
-								<st-file-upload id="multiple-non-allowed">
-									<span slot="upload-file-label" class="row cg-1 align-i-c">
-										upload file
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
+				</div>
+				<!-- COLOR INPUT -->
+				<div class="column rg-1">
+					<h3>Color input</h3>
+					<div class="row g-1">
+						<div>
+							<h4>Normal</h4>
+							<input type="color" />
+						</div>
+						<div>
+							<h4>Disabled</h4>
+							<input type="color" disabled />
+						</div>
+					</div>
+				</div>
+				<!-- FILE UPLOAD -->
+				<div id="fileupload-inputs">
+					<h3 class="mb-05">File upload</h3>
+					<div class="row g-2">
+						<!-- NORMAL -->
+						<div>
+							<h4>Normal</h4>
+							<st-file-upload id="normal" multiple>
+								<span slot="upload-file-label" class="row cg-1 align-i-c">
+									upload file
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+								<span slot="drop-label"> drop it! </span>
+								<span slot="wrong-type-label"> can't drop this type! </span>
+								<span slot="wrong-multiple-label">
+									can't drop more then one file!
+								</span>
+								<span slot="disabled-label" class="row cg-1 align-i-c">
+									upload disabled
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+							</st-file-upload>
+						</div>
+						<!-- MULTIPLE NON ALLOWED -->
+						<div>
+							<h4>Multiple non allowed</h4>
+							<st-file-upload id="multiple-non-allowed">
+								<span slot="upload-file-label" class="row cg-1 align-i-c">
+									upload file
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
 
-									<span slot="drop-label"> drop it! </span>
+								<span slot="drop-label"> drop it! </span>
 
-									<span slot="wrong-type-label"> can't drop this type! </span>
+								<span slot="wrong-type-label"> can't drop this type! </span>
 
-									<span slot="wrong-multiple-label">
-										can't drop more then one file!
-									</span>
+								<span slot="wrong-multiple-label">
+									can't drop more then one file!
+								</span>
 
-									<span slot="disabled-label" class="row cg-1 align-i-c">
-										upload disabled
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-								</st-file-upload>
-							</div>
+								<span slot="disabled-label" class="row cg-1 align-i-c">
+									upload disabled
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+							</st-file-upload>
+						</div>
 
-							<!-- ONLY IMAGES ALLOWED -->
-							<div>
-								<h4>Only images allowed</h4>
-								<st-file-upload id="only-images" multiple accept="image/*">
-									<span slot="upload-file-label" class="row cg-1 align-i-c">
-										upload image
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-									<span slot="drop-label"> drop image! </span>
-									<span slot="wrong-type-label"> only images allowed! </span>
-									<span slot="wrong-multiple-label">
-										can't drop more then one file!
-									</span>
-									<span slot="disabled-label" class="row cg-1 align-i-c">
-										upload disabled
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-								</st-file-upload>
-							</div>
-							<!-- DISABLED -->
-							<div>
-								<h4>Disabled</h4>
-								<st-file-upload id="disabled" disabled>
-									<span slot="upload-file-label" class="row cg-1 align-i-c">
-										upload file
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-									<span slot="drop-label"> drop it! </span>
-									<span slot="wrong-type-label"> can't drop this type! </span>
-									<span slot="wrong-multiple-label">
-										can't drop more then one file!
-									</span>
-									<span slot="disabled-label" class="row cg-1 align-i-c">
-										upload disabled
-										<div class="icon file-upload size-15 bg-light"></div>
-									</span>
-								</st-file-upload>
-							</div>
+						<!-- ONLY IMAGES ALLOWED -->
+						<div>
+							<h4>Only images allowed</h4>
+							<st-file-upload id="only-images" multiple accept="image/*">
+								<span slot="upload-file-label" class="row cg-1 align-i-c">
+									upload image
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+								<span slot="drop-label"> drop image! </span>
+								<span slot="wrong-type-label"> only images allowed! </span>
+								<span slot="wrong-multiple-label">
+									can't drop more then one file!
+								</span>
+								<span slot="disabled-label" class="row cg-1 align-i-c">
+									upload disabled
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+							</st-file-upload>
+						</div>
+						<!-- DISABLED -->
+						<div>
+							<h4>Disabled</h4>
+							<st-file-upload id="disabled" disabled>
+								<span slot="upload-file-label" class="row cg-1 align-i-c">
+									upload file
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+								<span slot="drop-label"> drop it! </span>
+								<span slot="wrong-type-label"> can't drop this type! </span>
+								<span slot="wrong-multiple-label">
+									can't drop more then one file!
+								</span>
+								<span slot="disabled-label" class="row cg-1 align-i-c">
+									upload disabled
+									<div class="icon file-upload size-15 bg-light"></div>
+								</span>
+							</st-file-upload>
 						</div>
 					</div>
 				</div>
