@@ -90,7 +90,7 @@ through custom events.
 
 | Event                | Description                              | Payload                                          |
 | -------------------- | ---------------------------------------- | ------------------------------------------------ |
-| `file-uploaded`      | Fired when files are loaded              | `{ files: string[] }`                            |
+| `file-uploaded`      | Fired when files are loaded              | `{ files: {data:string, name: string, type: string, size: number }[] }`                            |
 | `file-removed`       | Fired when files are removed             | `{}`                                             |
 | `wrong-types-loaded` | Fired when invalid file types are loaded | `{ wrongTypes: { name:string, type:string }[] }` |
 
