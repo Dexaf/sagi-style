@@ -368,7 +368,12 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         //empty the old file preview
         this.filePreviewContainerRef!.innerHTML = '';
 
-        const filesData: string[] = [];
+        const filesData: {
+            data: string, 
+            name: string, 
+            type: string,
+            size: number
+        }[] = [];
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i];
@@ -382,7 +387,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
 
             reader.onload = (e) => {
                 const fileBlob = e.target?.result as string;
-                filesData.push(fileBlob);
 
                 //handle preview
                 let imageUrl: null | string = null
@@ -395,7 +399,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
                     fileName += `... ${file.name.slice(file.name.length - 4, file.name.length + 1)}`
 
                 const templateforFileEntry = document.createElement("template");
-
                 templateforFileEntry.innerHTML = //html
                     `
                     <div class="t-a-center">
@@ -408,6 +411,14 @@ export class FileUploadWebComponent extends SagiHTMLElement {
                 this.filePreviewContainerRef?.appendChild(
                     templateforFileEntry.content.cloneNode(true)
                 )
+
+                //update file-uploaded's event
+                filesData.push({
+                    data: fileBlob,
+                    name: file.name,
+                    type: file.type,
+                    size: file.size
+                });
 
                 //fire event only when all the files are loaded
                 if (filesData.length === files.length) {
