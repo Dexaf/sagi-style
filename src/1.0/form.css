@@ -1,3 +1,9 @@
+input,
+select {
+	outline: none;
+	cursor: pointer;
+}
+
 /* SECTION - BUTTONS */
 button,
 .button {
@@ -166,6 +172,7 @@ button.green,
 /* !SECTION - BUTTONS */
 
 /* INPUTS */
+select,
 input {
 	border: 1px solid var(--sag-color-dark);
 	border-radius: 1rem;
@@ -177,6 +184,7 @@ input {
 		border-color 0.2s;
 }
 
+select:focus,
 input:focus {
 	box-shadow: 0px 0px 3px 0px var(--sag-color-shadow);
 }
@@ -187,12 +195,14 @@ input.readonly:not(:disabled) {
 	background-color: rgb(225, 225, 225);
 }
 
+select:disabled,
 input:disabled {
 	border-color: rgb(200, 200, 200);
 	background-color: rgb(225, 225, 225);
 	cursor: not-allowed;
 }
 
+select:focus,
 input:focus {
 	border-color: var(--sag-color-blue);
 }
@@ -240,19 +250,17 @@ label {
 	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-/* COLOR INPUT */
+/* SECTION - COLOR INPUT */
 input[type="color" i] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	outline: none;
 	box-shadow: none;
 	padding: 0;
 	width: 48px;
 	height: 32px;
 	background-color: transparent;
 	border: none;
-	cursor: pointer;
 }
 
 input[type="color" i]:disabled {
@@ -269,6 +277,56 @@ input[type="color" i]::-moz-color-swatch {
 	border-radius: 2rem;
 	border: none;
 }
+/* !SECTION - COLOR INPUT */
+
+/* SECTION - SELECT */
+select {
+	/* A reset of styles, including removing the default dropdown arrow */
+	appearance: none;
+	border-radius: 0;
+	margin: 0;
+	padding-right: 2rem;
+	width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.select {
+	display: grid;
+	grid-template-areas: "select";
+	align-items: center;
+}
+
+select,
+.select::after {
+	grid-area: select;
+}
+
+.select::after {
+	content: "";
+	display: inline-block;
+	width: 0.8em;
+	height: 0.5em;
+	background-color: var(--sag-color-dark);
+	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+	justify-self: end;
+	margin-right: 0.5rem;
+}
+
+.select:has(select:disabled)::after {
+	opacity: 0.1;
+}
+
+select[multiple] {
+	overflow-y: auto;
+	height: 6rem;
+}
+
+.select:has(select[multiple])::after {
+	opacity: 0;
+}
+/* !SECTION - SELECT */
 
 /* SECTION - RADIOBUTTON AND CHECKBOX */
 .label-for-pointbox > input[type="radio"],
