@@ -137,7 +137,26 @@ button.light:active:not(:disabled),
 	background-color: var(--sag-color-light);
 }
 
+/* BLUE */
+button.blue,
+.button.blue {
+	border-color: var(--sag-color-blue);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-blue);
+}
+
+/* GREEN */
+button.green,
+.button.green {
+	border-color: var(--sag-color-green);
+	color: var(--sag-color-dark);
+	background-color: var(--sag-color-green);
+}
+
+/* FIX ON ICONS FOR LIGHT COLOR BUTTONS */
 /* fixed for buttons with icons */
+.button.green:not(:disabled) .icon,
+button.green:not(:disabled) .icon,
 .button.light:not(:disabled) .icon,
 button.light:not(:disabled) .icon {
 	background-color: var(--sag-color-dark);
@@ -153,20 +172,9 @@ button.light:active:not(:disabled) .icon {
 	background-color: var(--sag-color-dark);
 }
 
-/* BLUE */
-button.blue,
-.button.blue {
-	border-color: var(--sag-color-blue);
-	color: var(--sag-color-light);
-	background-color: var(--sag-color-blue);
-}
-
-/* GREEN */
-button.green,
-.button.green {
-	border-color: var(--sag-color-green);
-	color: var(--sag-color-dark);
-	background-color: var(--sag-color-green);
+.button.green:active:not(:disabled) .icon,
+button.green:active:not(:disabled) .icon {
+	background-color: var(--sag-color-light);
 }
 /* !SECTION - BUTTON VARIATIONS */
 /* !SECTION - BUTTONS */
