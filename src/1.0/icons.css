@@ -107,3 +107,8 @@
 	mask-image: url("/sagi-style/assets/icons/diagonal-squares.svg");
 	-webkit-mask-image: url("/sagi-style/assets/icons/diagonal-squares.svg");
 }
+
+.icon.save {
+	mask-image: url("/sagi-style/assets/icons/save.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/save.svg");
+}
