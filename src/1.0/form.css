@@ -197,7 +197,7 @@ input:focus {
 	border-color: var(--sag-color-blue);
 }
 
-input:read-only:not(:disabled):focus {
+input.readonly:not(:disabled):focus {
 	border-color: rgb(201, 201, 201);
 }
 
