@@ -112,3 +112,23 @@
 	mask-image: url("/sagi-style/assets/icons/save.svg");
 	-webkit-mask-image: url("/sagi-style/assets/icons/save.svg");
 }
+
+.icon.tools {
+	mask-image: url("/sagi-style/assets/icons/tools.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/tools.svg");
+}
+
+.icon.gear {
+	mask-image: url("/sagi-style/assets/icons/gear.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/gear.svg");
+}
+
+.icon.cloud-down {
+	mask-image: url("/sagi-style/assets/icons/cloud-down.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/cloud-down.svg");
+}
+
+.icon.cloud-up {
+	mask-image: url("/sagi-style/assets/icons/cloud-up.svg");
+	-webkit-mask-image: url("/sagi-style/assets/icons/cloud-up.svg");
+}
