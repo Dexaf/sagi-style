@@ -1,5 +1,5 @@
 /* Header container */
-header { position: relative; z-index: 9999; }
+header { position: relative; z-index: 9998; }
 
 header > * { width: 128px; }
 
@@ -11,7 +11,7 @@ header > * { width: 128px; }
 		var(--sag-color-light) 20%
 	);
 	position: absolute;
-	z-index: 9999;
+	z-index: 9998;
 	height: 0;
 	overflow-y: hidden;
 	display: none;
