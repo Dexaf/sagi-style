@@ -11,8 +11,6 @@
 	align-items: center;
 
 	display: none;
-
-	z-index: 9998;
 }
 
 .modal:not(.hidden) { display: flex; }
@@ -24,7 +22,7 @@
 
 /* modal body */
 .modal .modal-body {
-	z-index: 2;
+	z-index: 9998;
 	box-shadow:
 		0px 0px 0px 0px var(--sag-color-green),
 		0px 0px 0px 0px var(--sag-color-blue);
