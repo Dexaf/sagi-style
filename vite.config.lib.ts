@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
-import  { resolve } from 'path'
+import { resolve } from 'path'
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
     build: {
@@ -11,5 +12,10 @@ export default defineConfig({
         assetsDir: 'public/sagi-style/assets',
         cssCodeSplit: true,
     },
-    base: '/'
+    base: '/',
+    plugins: [
+        dts({
+            insertTypesEntry: true,
+        }),
+    ],
 })
