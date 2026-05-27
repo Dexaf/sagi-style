@@ -55,6 +55,8 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     //NOTE - check https://stackoverflow.com/questions/7110353/html5-dragleave-fired-when-hovering-a-child-element
     /** used to check how inside we are in the dragged component */
     private dragLayerCounter = 0;
+    /** flag to check if web componet is inited or not */
+    private isWcInit = false;
     // !SECTION - PROPS
 
     // SECTION - LIFECYCLE
@@ -64,6 +66,40 @@ export class FileUploadWebComponent extends SagiHTMLElement {
 
     /** on component connected to dom */
     connectedCallback() {
+        this.tryInit();
+    }
+
+    /** on component removed from dom */
+    disconnectedCallback() {
+        this.inputRef?.removeEventListener('change', this.onInputChange);
+        this.clearFileBtnRef?.removeEventListener('click', this.onClearBtnClick);
+
+        this.labelWrapperRef?.removeEventListener("dragover", this.onDragEnter);
+        this.labelWrapperRef?.removeEventListener("dragleave", this.onDragLeave);
+        this.labelWrapperRef?.removeEventListener("dragover", this.onDragOver);
+        this.labelWrapperRef?.removeEventListener("drop", this.onDrop);
+    }
+
+    /** on attribute change callback */
+    attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+        switch (name) {
+            case this.attributesKeys.id:
+                this.tryInit();
+                break;
+            case this.attributesKeys.disabled:
+                if (this.isWcInit)
+                    this.handleAttributeChangeDisabled(oldValue, newValue);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /** try to init the web component */
+    private tryInit() {
+        if (this.isWcInit) return;
+        this.isWcInit = true;
+
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
@@ -118,29 +154,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         this.labelWrapperRef.addEventListener("dragleave", this.onDragLeave);
         this.labelWrapperRef.addEventListener("dragover", this.onDragOver);
         this.labelWrapperRef.addEventListener("drop", this.onDrop);
-    }
-
-    /** on component removed from dom */
-    disconnectedCallback() {
-        this.inputRef?.removeEventListener('change', this.onInputChange);
-        this.clearFileBtnRef?.removeEventListener('click', this.onClearBtnClick);
-
-        this.labelWrapperRef?.removeEventListener("dragover", this.onDragEnter);
-        this.labelWrapperRef?.removeEventListener("dragleave", this.onDragLeave);
-        this.labelWrapperRef?.removeEventListener("dragover", this.onDragOver);
-        this.labelWrapperRef?.removeEventListener("drop", this.onDrop);
-    }
-
-    /** on attribute change callback */
-    attributeChangedCallback(name: string, oldValue: string, newValue: string) {
-        switch (name) {
-            case this.attributesKeys.disabled:
-                this.handleAttributeChangeDisabled(oldValue, newValue);
-                break;
-
-            default:
-                break;
-        }
     }
     // !SECTION - LIFECYCLE
 
@@ -369,8 +382,8 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         this.filePreviewContainerRef!.innerHTML = '';
 
         const filesData: {
-            data: string, 
-            name: string, 
+            data: string,
+            name: string,
             type: string,
             size: number
         }[] = [];

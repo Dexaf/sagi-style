@@ -22,7 +22,8 @@ export class ModalWebComponent extends SagiHTMLElement {
     //refs to all of the needed html tag inside the template
     private closeModalBtnRef: HTMLButtonElement | null = null;
     private shadowCurtainRef: HTMLElement | null = null;
-
+    /** flag to check if web componet is inited or not */
+    private isWcInit = false;
     //!SECTION - PROPS
 
     //SECTION - LIFECYCLE
@@ -32,6 +33,28 @@ export class ModalWebComponent extends SagiHTMLElement {
 
     /** on component connected to dom */
     connectedCallback() {
+        this.tryInit();
+    }
+
+    /** on component removed from dom */
+    disconnectedCallback() {
+        this.closeModalBtnRef?.removeEventListener('click', this.onCloseModal);
+        this.shadowCurtainRef?.removeEventListener('click', this.onCloseModal);
+    }
+
+    /** on attributes change */
+    attributeChangedCallback(name: string, _: string, newValue: string) {
+        if (name === this.attributesKeys.id && newValue)
+            this.tryInit();
+    }
+    //!SECTION - LIFECYCLE
+
+    //SECTION - METHODS
+    /** try to init the web component callback*/
+    private tryInit() {
+        if (this.isWcInit) return;
+        this.isWcInit = true;
+
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
@@ -58,14 +81,6 @@ export class ModalWebComponent extends SagiHTMLElement {
         this.shadowCurtainRef.addEventListener('click', this.onCloseModal);
     }
 
-    /** on component removed from dom */
-    disconnectedCallback() {
-        this.closeModalBtnRef?.removeEventListener('click', this.onCloseModal);
-        this.shadowCurtainRef?.removeEventListener('click', this.onCloseModal);
-    }
-    //!SECTION - LIFECYCLE
-
-    //SECTION - METHODS
     protected getTemplate(id: string): HTMLTemplateElement {
         const t = document.createElement('template');
         t.innerHTML = //html
