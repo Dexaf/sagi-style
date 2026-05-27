@@ -11,6 +11,7 @@
 	align-items: center;
 
 	display: none;
+	z-index: 9998;
 }
 
 .modal:not(.hidden) { display: flex; }
