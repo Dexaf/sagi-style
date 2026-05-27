@@ -29,13 +29,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         accept: "accept",
         multiple: "multiple",
     }
-    /** observed attributes */
-    protected readonly observedAttributes = [
-        this.attributesKeys.id,
-        this.attributesKeys.disabled,
-        this.attributesKeys.accept,
-        this.attributesKeys.multiple
-    ];
 
     /** current state of the file upload input */
     private currentState: FileUploadType = "is-normal";
@@ -80,6 +73,16 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         this.labelWrapperRef?.removeEventListener("drop", this.onDrop);
     }
 
+    /** observed attributes */
+    static get observedAttributes() {
+        return [
+            "id",
+            "disabled",
+            "accept",
+            "multiple"
+        ];
+    }
+
     /** on attribute change callback */
     attributeChangedCallback(name: string, oldValue: string, newValue: string) {
         switch (name) {
@@ -98,12 +101,11 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     /** try to init the web component */
     private tryInit() {
         if (this.isWcInit) return;
-        this.isWcInit = true;
 
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
-            console.error('FileUploadWebComponent - connectedCallback \n attribute id is not present');
+            console.error('FileUploadWebComponent - tryInit \n attribute id is not present');
             return;
         }
 
@@ -154,6 +156,8 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         this.labelWrapperRef.addEventListener("dragleave", this.onDragLeave);
         this.labelWrapperRef.addEventListener("dragover", this.onDragOver);
         this.labelWrapperRef.addEventListener("drop", this.onDrop);
+
+        this.isWcInit = true;
     }
     // !SECTION - LIFECYCLE
 

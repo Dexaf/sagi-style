@@ -9,7 +9,6 @@ import indexCss from "../index.css?inline";
 export class NavbarWebComponent extends SagiHTMLElement {
     // SECTION - PROPS
     protected attributesKeys = {};
-    protected observedAttributes = [];
 
     //refs to all of the needed html tag inside the template
     private menuBtnRef: HTMLButtonElement | null = null;

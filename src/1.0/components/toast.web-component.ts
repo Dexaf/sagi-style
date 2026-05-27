@@ -7,10 +7,6 @@ export class ToastWebComponent extends SagiHTMLElement {
     protected attributesKeys = {
         type: "type"
     };
-    /** observed attributes */
-    protected observedAttributes: string[] = [
-        this.attributesKeys.type
-    ];
     /** ref to button to close toast */
     toastCloseBtn: HTMLButtonElement | null = null;
     /** ref to dive that represent elapse of countdown */
@@ -18,9 +14,6 @@ export class ToastWebComponent extends SagiHTMLElement {
     // !SECTION - PROPS
 
     // SECTION - LIFECYCLE
-    /**
-     *
-     */
     constructor() {
         super();
 

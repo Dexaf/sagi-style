@@ -14,10 +14,6 @@ export class ModalWebComponent extends SagiHTMLElement {
     protected readonly attributesKeys = {
         id: "id"
     };
-    /** observed attributes */
-    protected readonly observedAttributes: string[] = [
-        this.attributesKeys.id
-    ];
 
     //refs to all of the needed html tag inside the template
     private closeModalBtnRef: HTMLButtonElement | null = null;
@@ -42,6 +38,13 @@ export class ModalWebComponent extends SagiHTMLElement {
         this.shadowCurtainRef?.removeEventListener('click', this.onCloseModal);
     }
 
+    /** observed attributes */
+    static get observedAttributes() {
+        return [
+            "id"
+        ]
+    };
+
     /** on attributes change */
     attributeChangedCallback(name: string, _: string, newValue: string) {
         if (name === this.attributesKeys.id && newValue)
@@ -53,12 +56,11 @@ export class ModalWebComponent extends SagiHTMLElement {
     /** try to init the web component callback*/
     private tryInit() {
         if (this.isWcInit) return;
-        this.isWcInit = true;
 
         //check on attribute id
         const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
-            console.error('FileUploadWebComponent - connectedCallback \n attribute id is not present');
+            console.error('FileUploadWebComponent - tryInit \n attribute id is not present');
             return;
         }
 
@@ -79,6 +81,8 @@ export class ModalWebComponent extends SagiHTMLElement {
 
         this.closeModalBtnRef.addEventListener('click', this.onCloseModal);
         this.shadowCurtainRef.addEventListener('click', this.onCloseModal);
+
+        this.isWcInit = true;
     }
 
     protected getTemplate(id: string): HTMLTemplateElement {
