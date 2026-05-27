@@ -14,7 +14,8 @@
 	],
 	"exports": {
 		".": {
-			"import": "./dist/sagi-style.js"
+			"import": "./dist/sagi-style.js",
+			"types": "./dist/index.d.ts"
 		},
 		"./index.css": "./dist/index.css",
 		"./assets/*": "./dist/assets/*"
