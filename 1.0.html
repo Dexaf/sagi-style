@@ -1170,34 +1170,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- MODAL -->
-			<div id="modal" class="column rg-2">
-				<h2>Modals</h2>
-				<div class="row cg-1">
-					<button id="open-base-modal-btn">Modal one</button>
-					<st-modal id="base-modal">
-						<span slot="title">this is a title</span>
-						<p slot="content">this is the content</p>
-						<p slot="footer">this is the footer</p>
-					</st-modal>
-					<button id="open-second-modal-btn">Modal two</button>
-					<st-modal id="second-modal">
-						<span slot="title">this one is more complex</span>
-						<div slot="content">
-							<p>anything can be inside this modal</p>
-							<img class="w-100" src="/assets/images/logo/logo.png" alt="" />
-						</div>
-						<div slot="footer" class="row cg-1">
-							<button id="can-do-so-many-things" class="blue">
-								we can do so many things
-							</button>
-							<button id="see-so-much-stuff" class="green">
-								see so much stuff
-							</button>
-						</div>
-					</st-modal>
-				</div>
-			</div>
 			<!-- NAVBAR -->
 			<div id="navbar">
 				<h2>Navbar</h2>
@@ -1222,6 +1194,34 @@
 					<div class="container-85 m-auto py-2">
 						<button>ciao!</button>
 					</div>
+				</div>
+			</div>
+			<!-- MODAL -->
+			<div id="modal" class="column rg-2">
+				<h2>Modals</h2>
+				<div class="row cg-1">
+					<button id="open-base-modal-btn">Modal one</button>
+					<st-modal id="base-modal">
+						<span slot="title">this is a title</span>
+						<p slot="content">this is the content</p>
+						<p slot="footer">this is the footer</p>
+					</st-modal>
+					<button id="open-second-modal-btn">Modal two</button>
+					<st-modal id="second-modal" big>
+						<span slot="title">this one is more complex</span>
+						<div slot="content">
+							<p>anything can be inside this modal</p>
+							<img class="w-100" src="/assets/images/logo/logo.png" alt="" />
+						</div>
+						<div slot="footer" class="row cg-1">
+							<button id="can-do-so-many-things" class="blue">
+								we can do so many things
+							</button>
+							<button id="see-so-much-stuff" class="green">
+								see so much stuff
+							</button>
+						</div>
+					</st-modal>
 				</div>
 			</div>
 		</div>

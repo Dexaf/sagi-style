@@ -12,7 +12,8 @@ export class ModalWebComponent extends SagiHTMLElement {
     //SECTION - PROPS
     /** usable attributes in this web component */
     protected readonly attributesKeys = {
-        id: "id"
+        id: "id",
+        big: "big"
     };
 
     //refs to all of the needed html tag inside the template
@@ -41,7 +42,8 @@ export class ModalWebComponent extends SagiHTMLElement {
     /** observed attributes */
     static get observedAttributes() {
         return [
-            "id"
+            "id",
+            "big"
         ]
     };
 
@@ -64,7 +66,8 @@ export class ModalWebComponent extends SagiHTMLElement {
             return;
         }
 
-        const templateContentHtml = this.getTemplate(id)
+        const isBig = this.getAttribute(this.attributesKeys.big) !== null;
+        const templateContentHtml = this.getTemplate(id, isBig)
             .content
             .cloneNode(true) as DocumentFragment;
 
@@ -85,11 +88,11 @@ export class ModalWebComponent extends SagiHTMLElement {
         this.isWcInit = true;
     }
 
-    protected getTemplate(id: string): HTMLTemplateElement {
+    protected getTemplate(id: string, isBigger: boolean): HTMLTemplateElement {
         const t = document.createElement('template');
         t.innerHTML = //html
             `
-            <div id="${id}" class="modal hidden">
+            <div id="${id}" class="modal hidden ${isBigger ? "big" : ""}">
                 <div class="modal-body container-60 bg-light">
                     <div class="modal-header px-2 py-1 row just-sb">
                         <h2><slot name="title"></slot></h2>

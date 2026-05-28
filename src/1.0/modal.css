@@ -61,4 +61,10 @@
 	overflow-x: hidden;
 	max-height: 50vh;
 }
+
+.modal.big .modal-content {
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 60vh;
+}
 /* !SECTION - MODAL */
