@@ -5,7 +5,7 @@
 		"url": "git+https://github.com/Dexaf/sagi-style"
 	},
 	"license": "UNLICENSED",
-	"version": "1.5.9",
+	"version": "1.5.10",
 	"type": "module",
 	"author": "Federico Pisa - Sagitauros",
 	"description": "system design for sagitauros studio's inside applications",
