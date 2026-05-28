@@ -48,8 +48,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     //NOTE - check https://stackoverflow.com/questions/7110353/html5-dragleave-fired-when-hovering-a-child-element
     /** used to check how inside we are in the dragged component */
     private dragLayerCounter = 0;
-    /** flag to check if web componet is inited or not */
-    private isWcInit = false;
     // !SECTION - PROPS
 
     // SECTION - LIFECYCLE
@@ -58,8 +56,58 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     }
 
     /** on component connected to dom */
+    /** on component connected to dom */
     connectedCallback() {
-        this.tryInit();
+        //check on accept attribute
+        let accept = this.getAttribute(this.attributesKeys.accept);
+        if (accept === null || accept.length === 0)
+            accept = null
+        this.accept = accept;
+
+        //check on multiple attribute
+        let multiple = this.getAttribute(this.attributesKeys.multiple);
+        this.isMultipleAllowed = multiple !== null;
+
+        //check on attribute disabled
+        const disabledAttr = this.getAttribute(this.attributesKeys.disabled);
+        if (disabledAttr != null && disabledAttr != 'false')
+            this.isDisabled = true;
+
+        //get template
+        const templateContentRef = this.getTemplate(this.isDisabled, this.accept, this.isMultipleAllowed)
+            .content
+            .cloneNode(true) as DocumentFragment;
+
+        const shadowRoot = this.attachShadow({ mode: "open" });
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
+
+        //append to dom
+        shadowRoot.appendChild(templateContentRef);
+
+        //get ref to all of the elements inside the component
+        this.inputRef = this.shadowRoot!.querySelector("input[type='file']") as HTMLInputElement;
+        this.clearFileBtnRef = this.shadowRoot!.querySelector(".clear-file-btn") as HTMLButtonElement;
+        this.labelWrapperRef = this.shadowRoot!.querySelector('label') as HTMLLabelElement;
+        this.filePreviewContainerRef = this.shadowRoot!.querySelector(".file-preview-container") as HTMLDivElement;
+
+        //sync id if present
+        this.updateInputId(this.getAttribute(this.attributesKeys.id));
+
+        //init state of component
+        if (this.isDisabled)
+            this.updateState(FILE_UPLOAD_STATE.isDisabled);
+        else
+            this.updateState(FILE_UPLOAD_STATE.isNormal);
+
+        this.inputRef.addEventListener('change', this.onInputChange);
+        this.clearFileBtnRef.addEventListener('click', this.onClearBtnClick);
+
+        this.labelWrapperRef.addEventListener("dragenter", this.onDragEnter);
+        this.labelWrapperRef.addEventListener("dragleave", this.onDragLeave);
+        this.labelWrapperRef.addEventListener("dragover", this.onDragOver);
+        this.labelWrapperRef.addEventListener("drop", this.onDrop);
     }
 
     /** on component removed from dom */
@@ -87,10 +135,9 @@ export class FileUploadWebComponent extends SagiHTMLElement {
     attributeChangedCallback(name: string, oldValue: string, newValue: string) {
         switch (name) {
             case this.attributesKeys.id:
-                this.tryInit();
+                    this.updateInputId(newValue);
                 break;
             case this.attributesKeys.disabled:
-                if (this.isWcInit)
                     this.handleAttributeChangeDisabled(oldValue, newValue);
                 break;
             default:
@@ -98,72 +145,24 @@ export class FileUploadWebComponent extends SagiHTMLElement {
         }
     }
 
-    /** try to init the web component */
-    private tryInit() {
-        if (this.isWcInit) return;
+    /** sync label for and input id */
+    private updateInputId(id: string | null) {
+        if (!this.inputRef || !this.labelWrapperRef) return;
 
-        //check on attribute id
-        const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
-            console.error('FileUploadWebComponent - tryInit \n attribute id is not present');
+            this.inputRef.removeAttribute("id");
+            this.labelWrapperRef.removeAttribute("for");
             return;
         }
 
-        //check on accept attribute
-        let accept = this.getAttribute(this.attributesKeys.accept);
-        if (accept === null || accept.length === 0)
-            accept = null
-        this.accept = accept;
-
-
-        //check on multiple attribute
-        let multiple = this.getAttribute(this.attributesKeys.multiple);
-        this.isMultipleAllowed = multiple !== null;
-
-        //check on attribute disabled
-        const disabledAttr = this.getAttribute(this.attributesKeys.disabled);
-        if (disabledAttr != null && disabledAttr != 'false')
-            this.isDisabled = true;
-
-        //get template with id
-        const templateContentRef = this.getTemplate(id, this.isDisabled, this.accept, this.isMultipleAllowed)
-            .content
-            .cloneNode(true) as DocumentFragment;
-
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        const sharedSheet = new CSSStyleSheet();
-        sharedSheet.replaceSync(indexCss);
-        shadowRoot.adoptedStyleSheets = [sharedSheet];
-        //append to dom
-        shadowRoot.appendChild(templateContentRef);
-
-        //get ref to all of the elements inside the component
-        this.inputRef = this.shadowRoot!.querySelector("input[type='file']") as HTMLInputElement;
-        this.clearFileBtnRef = this.shadowRoot!.querySelector(".clear-file-btn") as HTMLButtonElement;
-        this.labelWrapperRef = this.shadowRoot!.querySelector('label') as HTMLLabelElement;
-        this.filePreviewContainerRef = this.shadowRoot!.querySelector(".file-preview-container") as HTMLDivElement;
-
-        //init state of component
-        if (this.isDisabled)
-            this.updateState(FILE_UPLOAD_STATE.isDisabled);
-        else
-            this.updateState(FILE_UPLOAD_STATE.isNormal);
-
-        this.inputRef.addEventListener('change', this.onInputChange);
-        this.clearFileBtnRef.addEventListener('click', this.onClearBtnClick);
-
-        this.labelWrapperRef.addEventListener("dragenter", this.onDragEnter);
-        this.labelWrapperRef.addEventListener("dragleave", this.onDragLeave);
-        this.labelWrapperRef.addEventListener("dragover", this.onDragOver);
-        this.labelWrapperRef.addEventListener("drop", this.onDrop);
-
-        this.isWcInit = true;
+        this.inputRef.id = `${id}-input`;
+        this.labelWrapperRef.htmlFor = `${id}-input`;
     }
     // !SECTION - LIFECYCLE
 
     // SECTION - METHODS
     /** template used for this web component */
-    protected getTemplate(id: string, isDisabled: boolean, accept: string | null, multiple: boolean): HTMLTemplateElement {
+    protected getTemplate(isDisabled: boolean, accept: string | null, multiple: boolean): HTMLTemplateElement {
         const t = document.createElement("template");
 
         //handle accept attribute
@@ -172,7 +171,7 @@ export class FileUploadWebComponent extends SagiHTMLElement {
             acceptAttributeHtml = `accept="${accept}"`;
         t.innerHTML = //html 
             `
-            <label class="label-for-file-upload column no-wrap rg-05 just-se align-i-c" for="${id}-input">
+            <label class="label-for-file-upload column no-wrap rg-05 just-se align-i-c">
                 <span class="upload-file-label-wrapper">
                     <slot name="upload-file-label"></slot>
                 </span>
@@ -190,7 +189,6 @@ export class FileUploadWebComponent extends SagiHTMLElement {
                 </div>
                 <div class="input-file-loading-container"></div>
                 <input 
-                    id="${id}-input" 
                     class="hidden"
                     type="file" 
                     ${acceptAttributeHtml} 
