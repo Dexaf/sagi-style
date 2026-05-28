@@ -153,6 +153,21 @@ button.green,
 	background-color: var(--sag-color-green);
 }
 
+/* RED */
+button.red,
+.button.red {
+	border-color: var(--sag-color-red);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-red);
+}
+
+button:active.red,
+.button:active.red {
+	border-color: var(--sag-color-red);
+	color: var(--sag-color-light);
+	background-color: var(--sag-color-red);
+}
+
 /* FIX ON ICONS FOR LIGHT COLOR BUTTONS */
 /* fixed for buttons with icons */
 .button.green:not(:disabled) .icon,
