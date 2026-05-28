@@ -60,6 +60,7 @@
 .file-preview-container img {
 	width: auto;
 	max-height: 140px;
+	max-width: 100%;
 }
 
 .input-file-loading-container::before,
