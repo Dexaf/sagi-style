@@ -405,29 +405,7 @@ export class FileUploadWebComponent extends SagiHTMLElement {
             reader.onload = (e) => {
                 const fileBlob = e.target?.result as string;
 
-                //handle preview
-                let imageUrl: null | string = null
-                if (file.type.startsWith("image/"))
-                    imageUrl = fileBlob;
-
-                let fileName = file.name.slice(0, 40);
-                //preview of full name if name is too long
-                if (file.name.length > 40)
-                    fileName += `... ${file.name.slice(file.name.length - 4, file.name.length + 1)}`
-
-                const templateforFileEntry = document.createElement("template");
-                templateforFileEntry.innerHTML = //html
-                    `
-                    <div class="t-a-center">
-                        ${imageUrl ? `<img src="${imageUrl}"/>` : '<div class="icon size-5 file-written bg-light m-auto mb-05"></div>'}
-                        <p>${fileName}</p>
-                        <hr/>
-                    </div>
-                `;
-
-                this.filePreviewContainerRef?.appendChild(
-                    templateforFileEntry.content.cloneNode(true)
-                )
+                this.generatePreview(fileBlob, file.name, file.type);
 
                 //update file-uploaded's event
                 filesData.push({
@@ -454,6 +432,42 @@ export class FileUploadWebComponent extends SagiHTMLElement {
             };
             reader.readAsDataURL(file);
         }
+    }
+
+    /**
+     * 
+     * @param fileBlob blob as a string of the file data
+     * @param name file name
+     * @param type file type
+     */
+    generatePreview(
+        fileBlob: string,
+        name: string,
+        type: string,
+    ) {
+        //handle preview
+        let imageUrl: null | string = null
+        if (type.startsWith("image/"))
+            imageUrl = fileBlob;
+
+        let fileName = name.slice(0, 40);
+        //preview of full name if name is too long
+        if (name.length > 40)
+            fileName += `... ${name.slice(name.length - 4, name.length + 1)}`
+
+        const templateforFileEntry = document.createElement("template");
+        templateforFileEntry.innerHTML = //html
+            `
+                    <div class="t-a-center">
+                        ${imageUrl ? `<img src="${imageUrl}"/>` : '<div class="icon size-5 file-written bg-light m-auto mb-05"></div>'}
+                        <p>${fileName}</p>
+                        <hr/>
+                    </div>
+                `;
+
+        this.filePreviewContainerRef?.appendChild(
+            templateforFileEntry.content.cloneNode(true)
+        )
     }
 
     /** removes file */
