@@ -30,7 +30,31 @@ export class ModalWebComponent extends SagiHTMLElement {
 
     /** on component connected to dom */
     connectedCallback() {
-        this.tryInit();
+        if (this.isWcInit) return;
+
+        const isBig = this.getAttribute(this.attributesKeys.big) !== null;
+
+        const templateContentHtml = this.getTemplate(isBig)
+            .content
+            .cloneNode(true) as DocumentFragment;
+
+        const shadowRoot = this.attachShadow({ mode: "open" })
+        const sharedSheet = new CSSStyleSheet();
+        sharedSheet.replaceSync(indexCss);
+        shadowRoot.adoptedStyleSheets = [sharedSheet];
+
+        shadowRoot.appendChild(templateContentHtml);
+
+        this.closeModalBtnRef = this.shadowRoot?.querySelector(".close-button") as HTMLButtonElement;
+        this.shadowCurtainRef = this.shadowRoot?.querySelector(".shadow-curtain") as HTMLElement;
+
+        this.closeModalBtnRef.addEventListener('click', this.onCloseModal);
+        this.shadowCurtainRef.addEventListener('click', this.onCloseModal);
+
+        // sync id se già presente
+        this.syncId(this.getAttribute(this.attributesKeys.id));
+
+        this.isWcInit = true;
     }
 
     /** on component removed from dom */
@@ -49,50 +73,36 @@ export class ModalWebComponent extends SagiHTMLElement {
 
     /** on attributes change */
     attributeChangedCallback(name: string, _: string, newValue: string) {
-        if (name === this.attributesKeys.id && newValue)
-            this.tryInit();
+        switch (name) {
+            case this.attributesKeys.id:
+                if (this.isWcInit)
+                    this.syncId(newValue);
+                break;
+            default:
+                break;
+        }
     }
     //!SECTION - LIFECYCLE
 
     //SECTION - METHODS
-    /** try to init the web component callback*/
-    private tryInit() {
-        if (this.isWcInit) return;
+    /** sync modal id */
+    private syncId(id: string | null) {
+        const modalRef = this.shadowRoot?.querySelector('.modal') as HTMLDivElement | null;
+        if (!modalRef) return;
 
-        //check on attribute id
-        const id = this.getAttribute(this.attributesKeys.id);
         if (!id) {
-            console.error('FileUploadWebComponent - tryInit \n attribute id is not present');
+            modalRef.removeAttribute("id");
             return;
         }
 
-        const isBig = this.getAttribute(this.attributesKeys.big) !== null;
-        const templateContentHtml = this.getTemplate(id, isBig)
-            .content
-            .cloneNode(true) as DocumentFragment;
-
-        const shadowRoot = this.attachShadow({ mode: "open" })
-        const sharedSheet = new CSSStyleSheet();
-        sharedSheet.replaceSync(indexCss);
-        shadowRoot.adoptedStyleSheets = [sharedSheet];
-        //append to dom
-        shadowRoot.appendChild(templateContentHtml);
-
-        //get ref to all of the elements inside the component
-        this.closeModalBtnRef = this.shadowRoot?.querySelector(".close-button") as HTMLButtonElement;
-        this.shadowCurtainRef = this.shadowRoot?.querySelector(".shadow-curtain") as HTMLElement;
-
-        this.closeModalBtnRef.addEventListener('click', this.onCloseModal);
-        this.shadowCurtainRef.addEventListener('click', this.onCloseModal);
-
-        this.isWcInit = true;
+        modalRef.id = id;
     }
 
-    protected getTemplate(id: string, isBigger: boolean): HTMLTemplateElement {
+    protected getTemplate(isBigger: boolean): HTMLTemplateElement {
         const t = document.createElement('template');
         t.innerHTML = //html
             `
-            <div id="${id}" class="modal hidden ${isBigger ? "big" : ""}">
+            <div class="modal hidden ${isBigger ? "big" : ""}">
                 <div class="modal-body container-60 bg-light">
                     <div class="modal-header px-2 py-1 row just-sb">
                         <h2><slot name="title"></slot></h2>
